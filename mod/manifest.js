@@ -1,0 +1,1 @@
+window.MOD_MANIFEST = [{"id":"m_886d6ec8","name":"Hydra_Visuals.mcpack","url":"mod/Hydra_Visuals.mcpack","size":"3.1 MB","game":"Minecraft","desc":"File mod trong thu muc mod."}];

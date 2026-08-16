@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="vi" data-preview-preset="calm">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kho lưu trữ mod Minecraft và file unlock game — miễn phí, tiện lợi, luôn được cập nhật.">
+    <title>MOD ARCHIVE - KHO LƯU TRỮ MOD MINECRAFT &amp; FILE UNLOCK GAME</title>
+    <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23059669'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EM%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        panel: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Baloo Bhaijaan 2"', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --panel-emerald: #10b981;
+            --panel-emerald-dark: #059669;
+            --panel-emerald-darker: #047857;
+            --panel-surface: #ffffff;
+            --panel-bg: #f8fafc;
+            --panel-text: #1e293b;
+            --panel-muted: #64748b;
+            --panel-border: rgba(16, 185, 129, 0.30);
+            --panel-gradient: linear-gradient(135deg, #059669 0%, #10b981 52%, #34d399 100%);
+            --preview-edge-subtle: rgba(16, 185, 129, 0.16);
+            --preview-edge: rgba(16, 185, 129, 0.30);
+            --preview-edge-hover: rgba(16, 185, 129, 0.55);
+            --preview-edge-strong: #059669;
+            --preview-edge-featured: 2px solid #059669;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: #f8fafc;
+            color: #1e293b;
+            font-family: "Baloo Bhaijaan 2", sans-serif;
+        }
+
+        .panel-gradient-text {
+            background: var(--panel-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .btn-panel-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.8rem 1.6rem;
+            border-radius: 0.9rem;
+            background: var(--panel-gradient);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.0625rem;
+            box-shadow: 0 10px 26px rgba(5, 150, 105, 0.28);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+            text-decoration: none;
+        }
+
+        .btn-panel-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 34px rgba(5, 150, 105, 0.36);
+        }
+
+        .btn-panel-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0.9rem;
+            background: #ffffff;
+            border: 1px solid var(--preview-edge);
+            color: #047857;
+            font-weight: 700;
+            font-size: 1.0625rem;
+            transition: border-color 0.18s ease, background 0.18s ease;
+            text-decoration: none;
+        }
+
+        .btn-panel-ghost:hover {
+            border-color: var(--preview-edge-hover);
+            background: #f0fdf4;
+        }
+
+        .kicker-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.22);
+            color: #047857;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .stat-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.65rem;
+            padding: 1.15rem 1rem 1.25rem;
+            border-radius: 1rem;
+            background: #ffffff;
+            border: 1px solid var(--preview-edge);
+            transition: border-color 0.2s ease;
+        }
+
+        .stat-card:hover { border-color: var(--preview-edge-hover); }
+
+        .stat-card-icon {
+            width: 2.6rem;
+            height: 2.6rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.14) 0%, rgba(52, 211, 153, 0.1) 100%);
+            color: #047857;
+            font-size: 1.1rem;
+        }
+
+        .stat-card-value {
+            font-size: clamp(1.6rem, 3.5vw, 2rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            color: #047857;
+        }
+
+        .stat-card-label {
+            font-size: 1.0625rem;
+            font-weight: 600;
+            line-height: 1.45;
+            color: #475569;
+        }
+
+        /* Tabs */
+        .archive-tab {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0.95rem;
+            font-weight: 700;
+            font-size: 1.0625rem;
+            color: #475569;
+            background: #ffffff;
+            border: 1px solid var(--preview-edge);
+            cursor: pointer;
+            transition: all 0.18s ease;
+        }
+
+        .archive-tab:hover { border-color: var(--preview-edge-hover); }
+
+        .archive-tab.active {
+            background: var(--panel-gradient);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 10px 24px rgba(5, 150, 105, 0.28);
+        }
+
+        .archive-tab .tab-count {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 1.6rem;
+            height: 1.6rem;
+            padding: 0 0.4rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            background: rgba(16, 185, 129, 0.14);
+            color: #047857;
+        }
+
+        .archive-tab.active .tab-count {
+            background: rgba(255, 255, 255, 0.22);
+            color: #fff;
+        }
+
+        /* Entry card */
+        .mod-card {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            padding: 1.25rem;
+            border-radius: 1.1rem;
+            background: #ffffff;
+            border: 1px solid var(--preview-edge);
+            transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .mod-card:hover {
+            border-color: var(--preview-edge-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 36px rgba(5, 150, 105, 0.12);
+        }
+
+        .mod-card-head {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+        }
+
+        .mod-thumb {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #fff;
+            background: var(--panel-gradient);
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .mod-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mod-name {
+            font-size: 1.125rem;
+            font-weight: 800;
+            line-height: 1.3;
+            color: #1e293b;
+            letter-spacing: -0.01em;
+        }
+
+        .mod-meta {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #64748b;
+        }
+
+        .mod-meta i { color: #10b981; margin-right: 0.3rem; }
+
+        .badge-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.2rem 0.65rem;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.03em;
+            background: rgba(16, 185, 129, 0.12);
+            color: #047857;
+            white-space: nowrap;
+        }
+
+        .badge-tag--amber { background: rgba(245, 158, 11, 0.14); color: #b45309; }
+        .badge-tag--sky { background: rgba(14, 165, 233, 0.12); color: #0369a1; }
+
+        .mod-desc {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #475569;
+        }
+
+        .mod-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.55rem 1.2rem;
+            border-radius: 0.8rem;
+            background: var(--panel-gradient);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.9375rem;
+            text-decoration: none;
+            box-shadow: 0 6px 16px rgba(5, 150, 105, 0.24);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .btn-download:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(5, 150, 105, 0.34); }
+
+        .btn-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.35rem;
+            height: 2.35rem;
+            border-radius: 0.7rem;
+            background: #ffffff;
+            border: 1px solid var(--preview-edge);
+            color: #64748b;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.18s ease;
+        }
+
+        .btn-icon:hover { border-color: #ef4444; color: #ef4444; }
+
+        .file-size {
+            margin-left: auto;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: #94a3b8;
+        }
+
+        /* Empty state */
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+            padding: 3.5rem 1.5rem;
+            border-radius: 1.25rem;
+            border: 2px dashed rgba(16, 185, 129, 0.4);
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .empty-icon {
+            width: 5.5rem;
+            height: 5.5rem;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.25rem;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.14) 0%, rgba(52, 211, 153, 0.1) 100%);
+            color: #047857;
+        }
+
+        /* Form */
+        .form-card {
+            padding: 1.75rem;
+            border-radius: 1.25rem;
+            background: #ffffff;
+            border: 1px solid var(--preview-edge);
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: #334155;
+            margin-bottom: 0.4rem;
+        }
+
+        .form-label i { color: #10b981; margin-right: 0.35rem; }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 0.65rem 0.9rem;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(16, 185, 129, 0.28);
+            background: #f8fafc;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #1e293b;
+            transition: border-color 0.18s ease, box-shadow 0.18s ease;
+            font-family: inherit;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+            background: #fff;
+        }
+
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23059669' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.9rem center;
+            background-size: 1rem;
+            padding-right: 2.4rem;
+            cursor: pointer;
+        }
+
+        .drop-zone {
+            border: 2px dashed rgba(16, 185, 129, 0.4);
+            border-radius: 0.9rem;
+            padding: 1.4rem;
+            text-align: center;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            background: #f8fafc;
+        }
+
+        .drop-zone:hover, .drop-zone.dragover {
+            border-color: #10b981;
+            background: #ecfdf5;
+        }
+
+        .drop-zone i { font-size: 1.6rem; color: #059669; display: block; margin-bottom: 0.4rem; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: rgba(16, 185, 129, 0.4); border-radius: 999px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(16, 185, 129, 0.6); }
+
+        .section-title {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            line-height: 1.65;
+            color: #475569;
+        }
+
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        .fade-enter { animation: fadeUp 0.35s ease both; }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #navMobile { transition: max-height 0.3s ease; overflow: hidden; }
+
+        /* Confirm modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.25rem;
+            background: rgba(15, 23, 42, 0.55);
+            backdrop-filter: blur(3px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.22s ease;
+        }
+
+        .modal-overlay.show { opacity: 1; pointer-events: auto; }
+
+        .modal-box {
+            width: 100%;
+            max-width: 26rem;
+            border-radius: 1.25rem;
+            background: #ffffff;
+            padding: 1.75rem;
+            text-align: center;
+            transform: translateY(18px) scale(0.97);
+            transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.3);
+        }
+
+        .modal-overlay.show .modal-box { transform: translateY(0) scale(1); }
+
+        .modal-icon {
+            width: 4rem;
+            height: 4rem;
+            margin: 0 auto 0.9rem;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.14) 0%, rgba(52, 211, 153, 0.1) 100%);
+            color: #047857;
+        }
+
+        .modal-name {
+            font-size: 1.125rem;
+            font-weight: 800;
+            line-height: 1.35;
+            color: #1e293b;
+            word-break: break-word;
+        }
+
+        .modal-hint {
+            margin-top: 0.4rem;
+            font-size: 0.9375rem;
+            line-height: 1.55;
+            color: #64748b;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.4rem;
+        }
+
+        .modal-actions .btn-panel-primary,
+        .modal-actions .btn-panel-ghost {
+            flex: 1;
+            justify-content: center;
+            padding-top: 0.7rem;
+            padding-bottom: 0.7rem;
+            font-size: 0.975rem;
+        }
+
+        /* Bottom mobile nav */
+        .bottom-nav {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 90;
+            display: flex;
+            justify-content: space-around;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--preview-edge);
+            padding: 0.4rem 0.25rem calc(0.4rem + env(safe-area-inset-bottom));
+        }
+
+        .bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.2rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 0.75rem;
+            font-size: 0.6875rem;
+            font-weight: 700;
+            color: #64748b;
+            text-decoration: none;
+            transition: color 0.15s ease;
+        }
+
+        .bottom-nav a i { font-size: 1.15rem; }
+        .bottom-nav a.active { color: #047857; }
+        @media (max-width: 767px) {
+            body { padding-bottom: 4.25rem; }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Confirm download modal -->
+    <div id="confirmModal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-box">
+            <div class="modal-icon"><i class="fa-solid fa-cloud-arrow-down"></i></div>
+            <div id="confirmModalName" class="modal-name">Tải xuống file?</div>
+            <p id="confirmModalHint" class="modal-hint">Bạn có chắc muốn tải file này?</p>
+            <div class="modal-actions">
+                <button id="confirmCancel" class="btn-panel-ghost"><i class="fa-solid fa-xmark"></i> Hủy</button>
+                <button id="confirmOk" class="btn-panel-primary"><i class="fa-solid fa-cloud-arrow-down"></i> Tải xuống</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ HEADER ============ -->
+    <header class="sticky top-0 z-50 border-b border-emerald-200/60 bg-white/85 backdrop-blur-md">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <a href="#" class="flex items-center gap-2.5">
+                    <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-600 via-emerald-500 to-emerald-400 text-lg font-extrabold text-white shadow-lg shadow-emerald-500/25">
+                        <i class="fa-solid fa-cube"></i>
+                    </span>
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900">
+                        MOD<span class="panel-gradient-text">ARCHIVE</span>
+                    </span>
+                </a>
+
+                <nav class="hidden items-center gap-1 md:flex">
+                    <a href="#home" class="rounded-lg px-3.5 py-2 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-50">Trang chủ</a>
+                    <a href="#archive" class="rounded-lg px-3.5 py-2 text-sm font-semibold text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-700">Kho lưu trữ</a>
+                    <a href="#about" class="rounded-lg px-3.5 py-2 text-sm font-semibold text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-700">Giới thiệu</a>
+                </nav>
+
+                <div class="flex items-center gap-3">
+                    <button id="btnMobileMenu" class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-emerald-200 bg-white text-emerald-700 md:hidden">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile nav -->
+            <div id="navMobile" class="max-h-0 md:hidden">
+                <div class="flex flex-col gap-1 pb-4">
+                    <a href="#home" class="flex items-center gap-3 rounded-lg px-3.5 py-3 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">
+                        <i class="fa-solid fa-house w-5 text-center"></i> Trang chủ
+                    </a>
+                    <a href="#archive" class="flex items-center gap-3 rounded-lg px-3.5 py-3 text-sm font-semibold text-slate-600 hover:bg-emerald-50">
+                        <i class="fa-solid fa-box-archive w-5 text-center"></i> Kho lưu trữ
+                    </a>
+                    <a href="#archive" data-goto-tab="mods" class="flex items-center gap-3 rounded-lg px-3.5 py-3 text-sm font-semibold text-slate-600 hover:bg-emerald-50">
+                        <i class="fa-solid fa-cubes w-5 text-center"></i> Mod
+                    </a>
+                    <a href="#archive" data-goto-tab="minecraft" class="flex items-center gap-3 rounded-lg px-3.5 py-3 text-sm font-semibold text-slate-600 hover:bg-emerald-50">
+                        <i class="fa-solid fa-cube w-5 text-center"></i> Minecraft
+                    </a>
+                    <a href="#archive" data-goto-tab="unlocks" class="flex items-center gap-3 rounded-lg px-3.5 py-3 text-sm font-semibold text-slate-600 hover:bg-emerald-50">
+                        <i class="fa-solid fa-unlock w-5 text-center"></i> File Unlock
+                    </a>
+                    <a href="#about" class="flex items-center gap-3 rounded-lg px-3.5 py-3 text-sm font-semibold text-slate-600 hover:bg-emerald-50">
+                        <i class="fa-solid fa-circle-info w-5 text-center"></i> Giới thiệu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section id="home" class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('bg.png');"></div>
+        <div class="pointer-events-none absolute inset-0" style="background: linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.12) 55%, rgba(248,250,252,0.85) 100%);"></div>
+        <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+            <div class="absolute inset-0 opacity-40" style="background-image: linear-gradient(rgba(16,185,129,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.06) 1px, transparent 1px); background-size: 2.5rem 2.5rem; mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, #000 25%, transparent 75%);"></div>
+        </div>
+
+        <div class="relative mx-auto max-w-7xl px-4 pb-16 pt-16 sm:px-6 sm:pt-24 lg:px-8">
+            <div class="mx-auto max-w-3xl text-center">
+                <span class="kicker-pill"><i class="fa-solid fa-box-archive"></i> Kho lưu trữ miễn phí</span>
+                <h1 class="mt-5 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl" style="text-shadow: 0 1px 2px rgba(255,255,255,0.85), 0 0 24px rgba(255,255,255,0.7);">
+                    Lưu trữ <span class="panel-gradient-text">Mod Minecraft</span><br>và File Unlock Game
+                </h1>
+                <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-slate-700 sm:text-xl" style="text-shadow: 0 1px 2px rgba(255,255,255,0.9);">
+                    Trung tâm lưu trữ tất cả bản mod, file unlock dành cho game của bạn. Dễ tìm, dễ tải, cập nhật liên tục.
+                </p>
+                <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+                    <a href="#archive" class="btn-panel-primary">
+                        <i class="fa-solid fa-magnifying-glass"></i> Khám phá kho
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats band -->
+            <div class="mx-auto mt-14 grid max-w-5xl grid-cols-2 gap-4 lg:grid-cols-4">
+                <div class="stat-card">
+                    <span class="stat-card-icon"><i class="fa-solid fa-cubes"></i></span>
+                    <span class="stat-card-value" id="statMods">0</span>
+                    <span class="stat-card-label">Bản mod</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-card-icon"><i class="fa-solid fa-unlock"></i></span>
+                    <span class="stat-card-value" id="statUnlocks">0</span>
+                    <span class="stat-card-label">File unlock</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-card-icon"><i class="fa-solid fa-cube"></i></span>
+                    <span class="stat-card-value" id="statMinecraft">0</span>
+                    <span class="stat-card-label">Bản Minecraft</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-card-icon"><i class="fa-solid fa-rotate"></i></span>
+                    <span class="stat-card-value" id="statTotal">0</span>
+                    <span class="stat-card-label">Tổng file</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ARCHIVE ============ -->
+    <section id="archive" class="border-y border-emerald-200/60 bg-white py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-3xl text-center reveal">
+                <span class="kicker-pill"><i class="fa-solid fa-box-archive"></i> Kho lưu trữ</span>
+                <h2 class="section-title mt-4">Tìm kiếm file dễ dàng</h2>
+                <p class="section-subtitle mt-3">Chọn chuyên mục mod, bản Minecraft hoặc file unlock, dùng ô tìm kiếm để lọc nhanh.</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
+                <button class="archive-tab active" data-tab="mods">
+                    <i class="fa-solid fa-cubes"></i> Mod
+                    <span class="tab-count" id="countMods">0</span>
+                </button>
+                <button class="archive-tab" data-tab="minecraft">
+                    <i class="fa-solid fa-cube"></i> Minecraft
+                    <span class="tab-count" id="countMinecraft">0</span>
+                </button>
+                <button class="archive-tab" data-tab="unlocks">
+                    <i class="fa-solid fa-unlock"></i> File Unlock
+                    <span class="tab-count" id="countUnlocks">0</span>
+                </button>
+            </div>
+
+            <!-- Search -->
+            <div class="mx-auto mt-8 max-w-3xl">
+                <div class="relative">
+                    <i class="fa-solid fa-magnifying-glass pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-emerald-600"></i>
+                    <input id="searchInput" type="text" placeholder="Tìm theo tên, mô tả..." class="form-input !pl-11">
+                </div>
+            </div>
+            <p id="modsFolderInfo" class="mt-3 hidden text-center text-sm font-semibold text-emerald-700"></p>
+
+            <!-- Lists -->
+            <div class="mt-8">
+                <!-- Mods grid -->
+                <div id="modsGrid" class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"></div>
+
+                <!-- Unlocks grid -->
+                <div id="unlocksGrid" class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 hidden"></div>
+
+                <!-- Minecraft versions grid -->
+                <div id="minecraftGrid" class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 hidden"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="border-t border-emerald-200/60 bg-white py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-3xl text-center reveal">
+                <span class="kicker-pill"><i class="fa-solid fa-heart"></i> Về chúng tôi</span>
+                <h2 class="section-title mt-4">Một kho lưu trữ đơn giản, đầy đủ</h2>
+                <p class="section-subtitle mt-3">Tất cả mod và file unlock được tập trung tại một nơi, dễ dàng quản lý và tải về.</p>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
+                <div class="stat-card reveal items-start text-left !gap-3 !p-6">
+                    <span class="stat-card-icon"><i class="fa-solid fa-cubes"></i></span>
+                    <h3 class="text-lg font-extrabold text-slate-900">Mod Minecraft</h3>
+                    <p class="text-[0.95rem] leading-relaxed text-slate-500">Tổng hợp các bản mod phổ biến theo từng phiên bản, loader Fabric/Forge với mô tả chi tiết.</p>
+                </div>
+                <div class="stat-card reveal items-start text-left !gap-3 !p-6">
+                    <span class="stat-card-icon"><i class="fa-solid fa-unlock"></i></span>
+                    <h3 class="text-lg font-extrabold text-slate-900">File Unlock Game</h3>
+                    <p class="text-[0.95rem] leading-relaxed text-slate-500">Lưu trữ file unlock, tool hỗ trợ game được chia sẻ theo chuyên mục, dễ tìm kiếm.</p>
+                </div>
+                <div class="stat-card reveal items-start text-left !gap-3 !p-6">
+                    <span class="stat-card-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                    <h3 class="text-lg font-extrabold text-slate-900">Miễn phí &amp; an toàn</h3>
+                    <p class="text-[0.95rem] leading-relaxed text-slate-500">Tải file miễn phí, không quảng cáo phiền phức. Dữ liệu được lưu trữ gọn gàng trên thiết bị.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom mobile nav -->
+    <nav id="bottomNav" class="bottom-nav md:hidden">
+        <a href="#home" data-nav="home"><i class="fa-solid fa-house"></i> Trang chủ</a>
+        <a href="#archive" data-goto-tab="mods" data-nav="mods"><i class="fa-solid fa-cubes"></i> Mod</a>
+        <a href="#archive" data-goto-tab="minecraft" data-nav="minecraft"><i class="fa-solid fa-cube"></i> Minecraft</a>
+        <a href="#archive" data-goto-tab="unlocks" data-nav="unlocks"><i class="fa-solid fa-unlock"></i> Unlock</a>
+    </nav>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-slate-900 py-10 text-slate-300">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
+                <div class="flex items-center gap-2.5">
+                    <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-400 text-white">
+                        <i class="fa-solid fa-cube text-sm"></i>
+                    </span>
+                    <span class="text-lg font-extrabold text-white">MOD<span class="text-emerald-400">ARCHIVE</span></span>
+                </div>
+                <p class="text-sm text-slate-400">Kho lưu trữ mod Minecraft &amp; file unlock game.</p>
+                <div class="text-sm text-slate-500">&copy; <span id="year"></span> MOD ARCHIVE</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            "use strict";
+
+            // ===== FILE UNLOCK — chỉnh sửa trực tiếp tại đây =====
+            // Mỗi file cần: id (duy nhất), name, desc, url (đường dẫn file/link),
+            // size, game, và tùy chọn: version, loader, thumb.
+            // Mod được tải tự động từ thư mục bạn chọn (nút "Chọn thư mục Mod").
+            var UNLOCK_DATA = [
+                    {
+                        id: "u1",
+                        name: "ModLoader.dll",
+                        game: "Minecraft",
+                        desc: "File ModLoader hỗ trợ nạp mod cho Minecraft.",
+                        url: "ModLoader.dll",
+                        size: "49 KB"
+                    },
+                    {
+                        id: "u2",
+                        name: "unlock.dll",
+                        game: "Minecraft",
+                        desc: "File unlock mở khóa tính năng trong game.",
+                        url: "unlock.dll",
+                        size: "11.5 KB"
+                    },
+                    {
+                        id: "u3",
+                        name: "vcruntime140_1.dll",
+                        game: "Hệ thống",
+                        desc: "Thư viện Visual C++ Runtime cần thiết để chạy file DLL.",
+                        url: "vcruntime140_1.dll",
+                        size: "49 KB"
+                    }
+                ];
+
+            var mods = [];
+            var unlocks = UNLOCK_DATA.slice();
+
+            // ===== CÁC BẢN MINECRAFT — chỉnh sửa trực tiếp tại đây =====
+            var MC_DATA = [
+                    {
+                        id: "mc1",
+                        name: "Minecraft PE 26.30",
+                        version: "26.30",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 26.30.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_26.30_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc2",
+                        name: "Minecraft PE 26.31",
+                        version: "26.31",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 26.31.",
+                        url: "https://dl.bandishare.com/MCPE/minecraft-26-40-31.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc3",
+                        name: "Minecraft PE 26.23",
+                        version: "26.23",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 26.23.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_26.23_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc4",
+                        name: "Minecraft PE 26.22",
+                        version: "26.22",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 26.22.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_26.22_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc5",
+                        name: "Minecraft PE 26.21",
+                        version: "26.21",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 26.21.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_26.21_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc6",
+                        name: "Minecraft PE 26.20",
+                        version: "26.20",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 26.20.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_26.20_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc7",
+                        name: "Minecraft PE 26.13",
+                        version: "26.13",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 26.13.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_26.13_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc8",
+                        name: "Minecraft PE 26.12",
+                        version: "26.12",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 26.12.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_26.12_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc9",
+                        name: "Minecraft PE 1.21.132",
+                        version: "1.21.132",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.132.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.132_BANDISHARE.apk",
+                        size: ""
+                    }
+                ];
+
+            function compareVersion(a, b) {
+                var pa = String(a.version || "").split(".").map(function (n) { return parseInt(n, 10) || 0; });
+                var pb = String(b.version || "").split(".").map(function (n) { return parseInt(n, 10) || 0; });
+                var len = Math.max(pa.length, pb.length);
+                for (var i = 0; i < len; i++) {
+                    var va = pa[i] || 0, vb = pb[i] || 0;
+                    if (va !== vb) return vb - va;
+                }
+                return 0;
+            }
+
+            var minecraftVersions = MC_DATA.slice().sort(compareVersion);
+
+            function esc(s) {
+                var d = document.createElement("div");
+                d.textContent = s == null ? "" : String(s);
+                return d.innerHTML;
+            }
+
+            function formatBytes(bytes) {
+                if (!bytes) return "";
+                var units = ["B", "KB", "MB", "GB", "TB"];
+                var i = 0;
+                var n = bytes;
+                while (n >= 1024 && i < units.length - 1) { n /= 1024; i++; }
+                return (n >= 100 ? Math.round(n) : Math.round(n * 10) / 10) + " " + units[i];
+            }
+
+            function buildCard(item, kind) {
+                var thumb = item.thumb
+                    ? '<div class="mod-thumb"><img src="' + esc(item.thumb) + '" alt=""></div>'
+                    : '<div class="mod-thumb"><i class="' + (kind === "mods" ? "fa-solid fa-cubes" : kind === "minecraft" ? "fa-solid fa-cube" : "fa-solid fa-unlock") + '"></i></div>';
+
+                var badges = "";
+                if (item.loader) badges += '<span class="badge-tag badge-tag--sky"><i class="fa-solid fa-gears"></i>' + esc(item.loader) + "</span> ";
+                if (item.game) badges += '<span class="badge-tag badge-tag--amber"><i class="fa-solid fa-gamepad"></i>' + esc(item.game) + "</span> ";
+                if (item.version) badges += '<span class="badge-tag"><i class="fa-solid fa-layer-group"></i>' + esc(item.version) + "</span> ";
+
+                var meta = "";
+                if (item.loader) meta += '<span class="mod-meta"><i class="fa-solid fa-gears"></i>' + esc(item.loader) + "</span>";
+                else if (item.game) meta += '<span class="mod-meta"><i class="fa-solid fa-gamepad"></i>' + esc(item.game) + "</span>";
+                if (item.version) meta += '<span class="mod-meta"><i class="fa-solid fa-layer-group"></i>' + esc(item.version) + "</span>";
+                if (item.size) meta += '<span class="mod-meta"><i class="fa-solid fa-weight-hanging"></i>' + esc(item.size) + "</span>";
+
+                var action = "";
+                if (item.url) {
+                    var isLocal = item.url.indexOf("http") !== 0;
+                    var target = isLocal ? "" : ' target="_blank" rel="noopener"';
+                    var download = isLocal ? ' download' : "";
+                    action = '<a href="' + esc(item.url) + '" data-dl="1"' + target + download + ' class="btn-download"><i class="fa-solid fa-cloud-arrow-down"></i> Tải xuống</a>';
+                } else {
+                    action = '<span class="badge-tag"><i class="fa-solid fa-circle-info"></i> Chưa có link</span>';
+                }
+
+                return (
+                    '<div class="mod-card fade-enter">' +
+                        '<div class="mod-card-head">' + thumb +
+                            '<div class="min-w-0 flex-1">' +
+                                '<div class="mod-name truncate" title="' + esc(item.name) + '">' + esc(item.name) + "</div>" +
+                                '<div class="mt-1 flex flex-wrap gap-2">' + badges + "</div>" +
+                            "</div>" +
+                        "</div>" +
+                        (item.desc ? '<p class="mod-desc">' + esc(item.desc) + "</p>" : "") +
+                        '<div class="mod-actions">' + action +
+                            (item.size ? '<span class="file-size"><i class="fa-solid fa-weight-hanging"></i> ' + esc(item.size) + "</span>" : "") +
+                        "</div>" +
+                    "</div>"
+                );
+            }
+
+            var currentTab = "mods";
+
+            function renderAll() {
+                var modsCount = mods.length;
+                var mcCount = minecraftVersions.length;
+                var unlocksCount = unlocks.length;
+
+                document.getElementById("statMods").textContent = modsCount;
+                document.getElementById("statMinecraft").textContent = mcCount;
+                document.getElementById("statUnlocks").textContent = unlocksCount;
+                document.getElementById("statTotal").textContent = modsCount + mcCount + unlocksCount;
+                document.getElementById("countMods").textContent = modsCount;
+                document.getElementById("countMinecraft").textContent = mcCount;
+                document.getElementById("countUnlocks").textContent = unlocksCount;
+
+                renderList("mods");
+                renderList("minecraft");
+                renderList("unlocks");
+            }
+
+            function getFiltered(kind) {
+                var q = document.getElementById("searchInput").value.trim().toLowerCase();
+                var list = kind === "mods" ? mods : kind === "minecraft" ? minecraftVersions : unlocks;
+                return list.filter(function (item) {
+                    return !q ||
+                        (item.name && item.name.toLowerCase().indexOf(q) !== -1) ||
+                        (item.desc && item.desc.toLowerCase().indexOf(q) !== -1) ||
+                        (item.loader && item.loader.toLowerCase().indexOf(q) !== -1) ||
+                        (item.version && item.version.toLowerCase().indexOf(q) !== -1) ||
+                        (item.game && item.game.toLowerCase().indexOf(q) !== -1);
+                });
+            }
+
+            function emptyStateHTML(kind) {
+                var isMod = kind === "mods";
+                var isMc = kind === "minecraft";
+                var icon = isMod ? "fa-solid fa-cubes" : isMc ? "fa-solid fa-cube" : "fa-solid fa-unlock";
+                var title = isMod ? "Chưa có mod nào" : isMc ? "Chưa có bản Minecraft nào" : "Chưa có file nào";
+                var text = isMod
+                    ? "Bỏ file mod vào thư mục mod rồi chạy Cap-nhat-mod.bat, mod sẽ tự hiện ở đây."
+                    : isMc
+                        ? "Các bản Minecraft sẽ được thêm trực tiếp trong code."
+                        : "Kho file unlock đang trống. File sẽ được thêm trực tiếp trong code.";
+                return (
+                    '<div class="empty-state col-span-full">' +
+                        '<div class="empty-icon"><i class="' + icon + '"></i></div>' +
+                        '<h3 class="text-xl font-extrabold text-slate-800">' + title + "</h3>" +
+                        '<p class="max-w-md text-[0.975rem] leading-relaxed text-slate-500">' + text + "</p>" +
+                    "</div>"
+                );
+            }
+
+            function renderList(kind) {
+                var grid = document.getElementById(kind + "Grid");
+                var list = getFiltered(kind);
+                if (!list.length) {
+                    grid.innerHTML = emptyStateHTML(kind);
+                    grid.classList.remove("grid");
+                    grid.classList.add("block");
+                } else {
+                    grid.classList.add("grid");
+                    grid.classList.remove("block");
+                    grid.innerHTML = list.map(function (item) { return buildCard(item, kind); }).join("");
+                }
+            }
+
+            function setActiveTab(tab) {
+                currentTab = tab;
+                document.querySelectorAll(".archive-tab[data-tab]").forEach(function (b) {
+                    b.classList.toggle("active", b.getAttribute("data-tab") === tab);
+                });
+                document.getElementById("modsGrid").classList.toggle("hidden", tab !== "mods");
+                document.getElementById("minecraftGrid").classList.toggle("hidden", tab !== "minecraft");
+                document.getElementById("unlocksGrid").classList.toggle("hidden", tab !== "unlocks");
+            }
+
+            // ---- Event wiring ----
+            document.getElementById("searchInput").addEventListener("input", function () {
+                renderList(currentTab);
+            });
+
+            document.querySelectorAll(".archive-tab[data-tab]").forEach(function (b) {
+                b.addEventListener("click", function () { setActiveTab(b.getAttribute("data-tab")); });
+            });
+
+            // ---- Tự động đọc danh sách mod từ thư mục mod ----
+            var manifestEl = document.createElement("script");
+            document.head.appendChild(manifestEl);
+            var manifestCache = null;
+
+            function refreshManifest() {
+                manifestEl.src = "mod/manifest.js?t=" + Date.now();
+            }
+
+            manifestEl.onload = function () {
+                var data = window.MOD_MANIFEST;
+                if (!Array.isArray(data)) return;
+                var str = JSON.stringify(data);
+                if (str === manifestCache) return;
+                manifestCache = str;
+                mods = data.map(function (m, i) {
+                    return {
+                        id: m.id || ("m_" + i),
+                        name: m.name,
+                        url: m.url,
+                        size: m.size,
+                        game: m.game || "Minecraft",
+                        desc: m.desc || "",
+                        loader: m.loader || ""
+                    };
+                });
+                modsFolderInfo.textContent = "Đang hiển thị " + mods.length + " mod từ thư mục mod.";
+                modsFolderInfo.classList.remove("hidden");
+                renderAll();
+            };
+
+            refreshManifest();
+            setInterval(refreshManifest, 5000);
+
+            // Mobile menu
+            var navOpen = false;
+            document.getElementById("btnMobileMenu").addEventListener("click", function () {
+                navOpen = !navOpen;
+                var nav = document.getElementById("navMobile");
+                nav.style.maxHeight = navOpen ? nav.scrollHeight + "px" : "0px";
+            });
+
+            // Mobile nav: điều hướng tab khi bấm từ menu/bottom nav
+            document.querySelectorAll("[data-goto-tab]").forEach(function (a) {
+                a.addEventListener("click", function () {
+                    setActiveTab(a.getAttribute("data-goto-tab"));
+                    var nav = document.getElementById("navMobile");
+                    nav.style.maxHeight = "0px";
+                    navOpen = false;
+                });
+            });
+
+            // ---- Xác nhận tải xuống ----
+            var confirmModal = document.getElementById("confirmModal");
+            var confirmNameEl = document.getElementById("confirmModalName");
+            var confirmHintEl = document.getElementById("confirmModalHint");
+            var pendingDownload = null;
+
+            function showConfirmModal(name, hint) {
+                confirmNameEl.textContent = name;
+                confirmHintEl.textContent = hint;
+                confirmModal.classList.add("show");
+                confirmModal.setAttribute("aria-hidden", "false");
+            }
+
+            function hideConfirmModal() {
+                confirmModal.classList.remove("show");
+                confirmModal.setAttribute("aria-hidden", "true");
+                pendingDownload = null;
+            }
+
+            function performDownload() {
+                if (!pendingDownload) return;
+                var url = pendingDownload.url;
+                var isLocal = url.indexOf("http") !== 0;
+                var a = document.createElement("a");
+                a.href = url;
+                if (isLocal) {
+                    a.download = pendingDownload.fileName || "";
+                } else {
+                    a.target = "_blank";
+                    a.rel = "noopener";
+                }
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                hideConfirmModal();
+            }
+
+            document.addEventListener("click", function (e) {
+                var link = e.target.closest("[data-dl]");
+                if (link) {
+                    e.preventDefault();
+                    var url = link.getAttribute("href");
+                    var name = (link.closest(".mod-card") ? link.closest(".mod-card").querySelector(".mod-name").textContent : "File này");
+                    var isLocal = url.indexOf("http") !== 0;
+                    var fileName = isLocal ? decodeURIComponent(url.split("/").pop()) : "";
+                    pendingDownload = { url: url, fileName: fileName };
+                    showConfirmModal(
+                        "Tải xuống " + name + "?",
+                        isLocal ? "File sẽ được tải về thiết bị của bạn." : "Bạn sẽ được chuyển tới link tải ngoài."
+                    );
+                    return;
+                }
+            });
+
+            document.getElementById("confirmOk").addEventListener("click", performDownload);
+            document.getElementById("confirmCancel").addEventListener("click", hideConfirmModal);
+            confirmModal.addEventListener("click", function (e) {
+                if (e.target === confirmModal) hideConfirmModal();
+            });
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") hideConfirmModal();
+            });
+
+            // Reveal on scroll
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (en) {
+                    if (en.isIntersecting) {
+                        en.target.classList.add("visible");
+                        io.unobserve(en.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+
+            // Bottom nav active state
+            var bottomNav = document.getElementById("bottomNav");
+            if (bottomNav) {
+                var navAnchors = bottomNav.querySelectorAll("a");
+                function setNavActive(which) {
+                    navAnchors.forEach(function (a) {
+                        a.classList.toggle("active", a.getAttribute("data-nav") === which);
+                    });
+                }
+                setActiveTab = (function (orig) {
+                    return function (tab) {
+                        orig(tab);
+                        setNavActive(tab);
+                    };
+                })(setActiveTab);
+                setNavActive("mods");
+            }
+
+            document.getElementById("year").textContent = new Date().getFullYear();
+
+            renderAll();
+        })();
+    </script>
+</body>
+</html>
