@@ -1220,15 +1220,16 @@
                     var catIcons = { mod: "fa-cubes", texture: "fa-palette", map: "fa-map", skin: "fa-user-tie" };
                     badges += '<span class="badge-tag"><i class="fa-solid ' + (catIcons[item.cat] || "fa-cubes") + '"></i>' + (catNames[item.cat] || item.cat) + "</span> ";
                 }
-                if (item.loader) badges += '<span class="badge-tag badge-tag--sky"><i class="fa-solid fa-gears"></i>' + esc(item.loader) + "</span> ";
+                var isMinecraft = kind === "minecraft";
+                if (!isMinecraft && item.loader) badges += '<span class="badge-tag badge-tag--sky"><i class="fa-solid fa-gears"></i>' + esc(item.loader) + "</span> ";
                 if (item.game) badges += '<span class="badge-tag badge-tag--amber"><i class="fa-solid fa-gamepad"></i>' + esc(item.game) + "</span> ";
                 if (item.version) badges += '<span class="badge-tag"><i class="fa-solid fa-layer-group"></i>' + esc(item.version) + "</span> ";
 
                 var meta = "";
-                if (item.loader) meta += '<span class="mod-meta"><i class="fa-solid fa-gears"></i>' + esc(item.loader) + "</span>";
+                if (!isMinecraft && item.loader) meta += '<span class="mod-meta"><i class="fa-solid fa-gears"></i>' + esc(item.loader) + "</span>";
                 else if (item.game) meta += '<span class="mod-meta"><i class="fa-solid fa-gamepad"></i>' + esc(item.game) + "</span>";
                 if (item.version) meta += '<span class="mod-meta"><i class="fa-solid fa-layer-group"></i>' + esc(item.version) + "</span>";
-                if (item.size) meta += '<span class="mod-meta"><i class="fa-solid fa-weight-hanging"></i>' + esc(item.size) + "</span>";
+                if (!isMinecraft && item.size) meta += '<span class="mod-meta"><i class="fa-solid fa-weight-hanging"></i>' + esc(item.size) + "</span>";
 
                 var action = "";
                 if (item.dlurl) {
@@ -1244,15 +1245,15 @@
                         "&loader=" + encodeURIComponent(item.loader || "") +
                         "&thumb=" + encodeURIComponent(item.thumb || "") +
                         "&cat=" + encodeURIComponent(item.cat || "") +
-                        "&source=" + encodeURIComponent(item.source || "") +
-                        "&srcurl=" + encodeURIComponent(item.srcurl || "");
+                        "&source=" + encodeURIComponent(isMinecraft ? "Bandishare" : (item.source || "")) +
+                        "&srcurl=" + encodeURIComponent(isMinecraft ? "https://bandishare.io/" : (item.srcurl || ""));
                     action = '<a href="mod.html?' + qs + '" class="btn-download"><i class="fa-solid fa-circle-info"></i> Xem & tải</a>';
                 } else {
                     action = '<span class="badge-tag"><i class="fa-solid fa-circle-info"></i> Đang cập nhật</span>';
                 }
 
                 return (
-                    '<div class="mod-card fade-enter">' +
+                    '<div class="mod-card fade-enter" data-id="' + esc(item.id) + '">' +
                         '<div class="mod-card-head">' + thumb +
                             '<div class="min-w-0 flex-1">' +
                                 '<div class="mod-name truncate" title="' + esc(item.name) + '">' + esc(item.name) + "</div>" +
@@ -1261,7 +1262,7 @@
                         "</div>" +
                         (item.desc ? '<p class="mod-desc">' + esc(item.desc) + "</p>" : "") +
                         '<div class="mod-actions">' + action +
-                            (item.size ? '<span class="file-size"><i class="fa-solid fa-weight-hanging"></i> ' + esc(item.size) + "</span>" : "") +
+                            (item.size && !isMinecraft ? '<span class="file-size"><i class="fa-solid fa-weight-hanging"></i> ' + esc(item.size) + "</span>" : "") +
                         "</div>" +
                     "</div>"
                 );
@@ -1289,6 +1290,39 @@
             }
 
             var currentModCat = "all";
+
+            // ===== Đề xuất theo lượt bấm =====
+            var CLICKS_KEY = "modArchiveClicks";
+            var clickCounts = null;
+
+            function loadClicks() {
+                if (clickCounts) return clickCounts;
+                clickCounts = {};
+                try {
+                    var raw = localStorage.getItem(CLICKS_KEY);
+                    if (raw) clickCounts = JSON.parse(raw) || {};
+                } catch (e) { clickCounts = {}; }
+                return clickCounts;
+            }
+
+            function getClickCount(id) {
+                var c = loadClicks();
+                return c[id] || 0;
+            }
+
+            function registerClick(id) {
+                if (!id) return;
+                var c = loadClicks();
+                c[id] = (c[id] || 0) + 1;
+                try { localStorage.setItem(CLICKS_KEY, JSON.stringify(c)); } catch (e) {}
+            }
+
+            function sortByPopularity(list) {
+                return list.slice().sort(function (a, b) {
+                    var da = getClickCount(a.id), db = getClickCount(b.id);
+                    return db - da;
+                });
+            }
 
             function getFiltered(kind) {
                 var q = document.getElementById("searchInput").value.trim().toLowerCase();
@@ -1347,7 +1381,8 @@
                 } else {
                     grid.classList.add("grid");
                     grid.classList.remove("block");
-                    grid.innerHTML = list.map(function (item) { return buildCard(item, kind); }).join("");
+                    var ordered = sortByPopularity(list);
+                    grid.innerHTML = ordered.map(function (item) { return buildCard(item, kind); }).join("");
                 }
             }
 
@@ -1359,6 +1394,7 @@
                 document.getElementById("modsGrid").classList.toggle("hidden", tab !== "mods");
                 document.getElementById("minecraftGrid").classList.toggle("hidden", tab !== "minecraft");
                 document.getElementById("unlocksGrid").classList.toggle("hidden", tab !== "unlocks");
+                document.getElementById("modCats").classList.toggle("hidden", tab !== "mods");
             }
 
             // ---- Event wiring ----
@@ -1480,6 +1516,8 @@
                 var link = e.target.closest("[data-dl]");
                 if (link) {
                     e.preventDefault();
+                    var card = link.closest(".mod-card");
+                    if (card) registerClick(card.getAttribute("data-id"));
                     var url = link.getAttribute("href");
                     var isExternal = url.indexOf("http") === 0;
                     var name = (link.closest(".mod-card") ? link.closest(".mod-card").querySelector(".mod-name").textContent : "File này");
@@ -1497,6 +1535,12 @@
                             "File sẽ được tải về thiết bị của bạn."
                         );
                     }
+                    return;
+                }
+                var infoLink = e.target.closest('a[href^="mod.html"]');
+                if (infoLink) {
+                    var card2 = infoLink.closest(".mod-card");
+                    if (card2) registerClick(card2.getAttribute("data-id"));
                     return;
                 }
             });
