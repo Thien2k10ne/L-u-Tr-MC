@@ -375,6 +375,266 @@ $externalMods = @(
         dlurl  = "https://modrinth.com/mod/dynamictrees"
         thumb  = "thumbs/dynamic_trees.webp"
         desc   = "Cay coi lon len tu tu va do than cay that, he thong cay dong."
+    },
+    @{
+        name   = "Fresh Animations"
+        cat    = "texture"
+        size   = "-"
+        source = "FreshLX"
+        srcurl = "https://www.curseforge.com/minecraft/texture-packs/fresh-animations"
+        dlurl  = "https://www.curseforge.com/minecraft/texture-packs/fresh-animations"
+        thumb  = "thumbs/fresh_animations.webp"
+        desc   = "Lam moi toan bo animation cho moi loai sinh vat, song dong hon."
+    },
+    @{
+        name   = "Fresh Moves"
+        cat    = "texture"
+        size   = "-"
+        source = "Ithan"
+        srcurl = "https://www.curseforge.com/minecraft/texture-packs/fresh-moves"
+        dlurl  = "https://www.curseforge.com/minecraft/texture-packs/fresh-moves"
+        thumb  = "thumbs/fresh_moves.png"
+        desc   = "Nang cao ho tro mod cho Fresh Animations, di chuyen nguyen ban."
+    },
+    @{
+        name   = "Motschen's Better Leaves"
+        cat    = "texture"
+        size   = "-"
+        source = "Motschen"
+        srcurl = "https://www.curseforge.com/minecraft/texture-packs/motschens-better-leaves"
+        dlurl  = "https://www.curseforge.com/minecraft/texture-packs/motschens-better-leaves"
+        thumb  = "thumbs/better_leaves.png"
+        desc   = "Lam la cay dep, day va toi uu hon, thay the texture la mac dinh."
+    },
+    @{
+        name   = "Low On Fire"
+        cat    = "texture"
+        size   = "-"
+        source = "Haikis"
+        srcurl = "https://www.curseforge.com/minecraft/texture-packs/low-on-fire"
+        dlurl  = "https://www.curseforge.com/minecraft/texture-packs/low-on-fire"
+        thumb  = "thumbs/low_on_fire.png"
+        desc   = "Giam do choi cua lua, khong gay kho chiu cho mat."
+    },
+    @{
+        name   = "Torches Reimagined"
+        cat    = "texture"
+        size   = "-"
+        source = "Reijvi"
+        srcurl = "https://www.curseforge.com/minecraft/texture-packs/torches-reimagined"
+        dlurl  = "https://www.curseforge.com/minecraft/texture-packs/torches-reimagined"
+        thumb  = "thumbs/torches_reimagined.png"
+        desc   = "Lam moi duoc va duoc cam (torch) voi texture chuan hoa."
+    },
+    @{
+        name   = "Enchantment Descriptions Compat"
+        cat    = "texture"
+        size   = "-"
+        source = "CyberRat2"
+        srcurl = "https://www.curseforge.com/minecraft/texture-packs/enchantment-descriptions-compat"
+        dlurl  = "https://www.curseforge.com/minecraft/texture-packs/enchantment-descriptions-compat"
+        thumb  = "thumbs/enchant_desc_compat.png"
+        desc   = "Ho tro texture cho mod Enchantment Descriptions."
+    },
+    @{
+        name   = "Fast Better Grass"
+        cat    = "texture"
+        size   = "-"
+        source = "robotkoer"
+        srcurl = "https://www.curseforge.com/minecraft/texture-packs/fast-better-grass"
+        dlurl  = "https://www.curseforge.com/minecraft/texture-packs/fast-better-grass"
+        thumb  = "thumbs/fast_better_grass.png"
+        desc   = "Co dep hon nhung van hoat dong nhanh, phu hop may yeu."
+    },
+    @{
+        name   = "Aimz - Better Crosshair"
+        cat    = "texture"
+        size   = "-"
+        source = "GamerPotion"
+        srcurl = "https://www.curseforge.com/minecraft/texture-packs/aimz-better-crosshair"
+        dlurl  = "https://www.curseforge.com/minecraft/texture-packs/aimz-better-crosshair"
+        thumb  = "thumbs/better_crosshair.png"
+        desc   = "La ngam (crosshair) dep, ro rang, ho tro nhieu phong cach."
+    },
+    @{
+        name   = "Stay Clear"
+        cat    = "texture"
+        size   = "-"
+        source = "Robdog"
+        srcurl = "https://www.curseforge.com/minecraft/texture-packs/stay-clear"
+        dlurl  = "https://www.curseforge.com/minecraft/texture-packs/stay-clear"
+        thumb  = "thumbs/stay_clear.png"
+        desc   = "Texture trong suot cho block chan nhin, de xay dung."
+    },
+    @{
+        name   = "Better Lanterns"
+        cat    = "texture"
+        size   = "-"
+        source = "Nico4play"
+        srcurl = "https://www.curseforge.com/minecraft/texture-packs/better-lanterns"
+        dlurl  = "https://www.curseforge.com/minecraft/texture-packs/better-lanterns"
+        thumb  = "thumbs/better_lanterns.png"
+        desc   = "Lam den long (lantern) dep hon voi do hoa chi tiet."
+    },
+    @{
+        name   = "Sky Villages - Supplementaries Compat"
+        cat    = "texture"
+        size   = "-"
+        source = "Aureljz"
+        srcurl = "https://www.curseforge.com/minecraft/texture-packs/sky-villages-supplementaries-compat"
+        dlurl  = "https://www.curseforge.com/minecraft/texture-packs/sky-villages-supplementaries-compat"
+        thumb  = "thumbs/sky_villages_compat.png"
+        desc   = "Ho tro texture cho lang tren troi cua mod Supplementaries."
+    },
+    @{
+        name   = "Alternative Rain Sounds"
+        cat    = "texture"
+        size   = "-"
+        source = "paoleks"
+        srcurl = "https://www.curseforge.com/minecraft/texture-packs/alternative-rain-sounds"
+        dlurl  = "https://www.curseforge.com/minecraft/texture-packs/alternative-rain-sounds"
+        thumb  = "thumbs/alternative_rain.png"
+        desc   = "Thay doi am thanh mua trong game bang am thanh thuc."
+    },
+    @{
+        name   = "Lower Shield - Enhanced Combat Visibility"
+        cat    = "texture"
+        size   = "-"
+        source = "dihogenn"
+        srcurl = "https://www.curseforge.com/minecraft/texture-packs/lower-shield"
+        dlurl  = "https://www.curseforge.com/minecraft/texture-packs/lower-shield"
+        thumb  = "thumbs/lower_shield.gif"
+        desc   = "Ha thap vi tri khiên de khong che mat nhin khi chien dau."
+    },
+    @{
+        name   = "Just Enough Items (JEI)"
+        cat    = "mod"
+        size   = "-"
+        source = "mezz"
+        srcurl = "https://www.curseforge.com/minecraft/mc-mods/jei"
+        dlurl  = "https://www.curseforge.com/minecraft/mc-mods/jei"
+        thumb  = "thumbs/jei.jpeg"
+        desc   = "Xem toan bo vat pham va cong thuc che tao (recipe) trong game."
+    },
+    @{
+        name   = "Bookshelf"
+        cat    = "mod"
+        size   = "-"
+        source = "DarkhaxDev"
+        srcurl = "https://www.curseforge.com/minecraft/mc-mods/bookshelf"
+        dlurl  = "https://www.curseforge.com/minecraft/mc-mods/bookshelf"
+        thumb  = "thumbs/bookshelf.png"
+        desc   = "Thu vien ho tro (API) can thiet cho nhieu mod khac."
+    },
+    @{
+        name   = "Enchantment Descriptions"
+        cat    = "mod"
+        size   = "-"
+        source = "DarkhaxDev"
+        srcurl = "https://www.curseforge.com/minecraft/mc-mods/enchantment-descriptions"
+        dlurl  = "https://www.curseforge.com/minecraft/mc-mods/enchantment-descriptions"
+        thumb  = "thumbs/enchantment_descriptions.png"
+        desc   = "Hien thi mo ta chi tiet cua tung phu phep (enchantment)."
+    },
+    @{
+        name   = "Nature's Compass"
+        cat    = "mod"
+        size   = "-"
+        source = "Chaosyr"
+        srcurl = "https://www.curseforge.com/minecraft/mc-mods/natures-compass"
+        dlurl  = "https://www.curseforge.com/minecraft/mc-mods/natures-compass"
+        thumb  = "thumbs/natures_compass.png"
+        desc   = "La ban la tim sinh quyen (biome) mong muon."
+    },
+    @{
+        name   = "Iris Shaders"
+        cat    = "mod"
+        size   = "-"
+        source = "IMS"
+        srcurl = "https://www.curseforge.com/minecraft/mc-mods/irisshaders"
+        dlurl  = "https://www.curseforge.com/minecraft/mc-mods/irisshaders"
+        thumb  = "thumbs/iris.webp"
+        desc   = "Tai shader tuong thich, chay man me tren Fabric."
+    },
+    @{
+        name   = "Lithostitched"
+        cat    = "mod"
+        size   = "-"
+        source = "Apollo"
+        srcurl = "https://www.curseforge.com/minecraft/mc-mods/lithostitched"
+        dlurl  = "https://www.curseforge.com/minecraft/mc-mods/lithostitched"
+        thumb  = "thumbs/lithostitched.png"
+        desc   = "Thu vien ho tro cho cac mod chinh sua world gen."
+    },
+    @{
+        name   = "Simple Voice Chat"
+        cat    = "mod"
+        size   = "-"
+        source = "BreadLoaf"
+        srcurl = "https://www.curseforge.com/minecraft/mc-mods/simple-voice-chat"
+        dlurl  = "https://www.curseforge.com/minecraft/mc-mods/simple-voice-chat"
+        thumb  = "thumbs/simple_voice_chat.png"
+        desc   = "Goi thoai (voice chat) trong game, can cai tren may chu."
+    },
+    @{
+        name   = "BadOptimizations"
+        cat    = "mod"
+        size   = "-"
+        source = "thosea"
+        srcurl = "https://www.curseforge.com/minecraft/mc-mods/badoptimizations"
+        dlurl  = "https://www.curseforge.com/minecraft/mc-mods/badoptimizations"
+        thumb  = "thumbs/badoptimizations.png"
+        desc   = "Toi uu hoa hieu nang, giam lag khong can cau hinh."
+    },
+    @{
+        name   = "3D Skin Layers"
+        cat    = "mod"
+        size   = "-"
+        source = "tr7zw"
+        srcurl = "https://www.curseforge.com/minecraft/mc-mods/skin-layers-3d"
+        dlurl  = "https://www.curseforge.com/minecraft/mc-mods/skin-layers-3d"
+        thumb  = "thumbs/skin_layers_3d.webp"
+        desc   = "Hien thi lop skin (ao, tay...) dang 3D nhu Bedrock."
+    },
+    @{
+        name   = "Continuity"
+        cat    = "mod"
+        size   = "-"
+        source = "Pepper_Bell"
+        srcurl = "https://www.curseforge.com/minecraft/mc-mods/continuity"
+        dlurl  = "https://www.curseforge.com/minecraft/mc-mods/continuity"
+        thumb  = "thumbs/continuity.png"
+        desc   = "Ho tro texture lien mach (connected textures) cho Fabric."
+    },
+    @{
+        name   = "Fast Leaf Decay"
+        cat    = "mod"
+        size   = "-"
+        source = "olafskiii"
+        srcurl = "https://www.curseforge.com/minecraft/mc-mods/fast-leaf-decay"
+        dlurl  = "https://www.curseforge.com/minecraft/mc-mods/fast-leaf-decay"
+        thumb  = "thumbs/fast_leaf_decay.png"
+        desc   = "La cay rung nhanh hon sau khi chat cay."
+    },
+    @{
+        name   = "Clean Swing Through Grass"
+        cat    = "mod"
+        size   = "-"
+        source = "Raycoms"
+        srcurl = "https://www.curseforge.com/minecraft/mc-mods/clean-swing-through-grass"
+        dlurl  = "https://www.curseforge.com/minecraft/mc-mods/clean-swing-through-grass"
+        thumb  = "thumbs/clean_swing.png"
+        desc   = "Vuot qua co, la va cay khi danh nhau, khong bi can."
+    },
+    @{
+        name   = "Cherished Worlds"
+        cat    = "mod"
+        size   = "-"
+        source = "TheIllusiveC4"
+        srcurl = "https://www.curseforge.com/minecraft/mc-mods/cherished-worlds"
+        dlurl  = "https://www.curseforge.com/minecraft/mc-mods/cherished-worlds"
+        thumb  = "thumbs/cherished_worlds.png"
+        desc   = "Ghim (pin) cac the gioi yeu thich trong man hinh chon world."
     }
 )
 
