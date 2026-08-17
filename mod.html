@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin file - MOD ARCHIVE</title>
-    <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23059669'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EM%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/png" href="https://store-images.s-microsoft.com/image/apps.21661.14216416494490173.9772fa78-5a01-45ce-9b9e-6ec61a10f4e2.f787fea4-1e7a-4458-a112-c5ac10fec5c0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap" rel="stylesheet">
@@ -182,9 +182,64 @@
         .modal-overlay.show .modal-box { transform: translateY(0) scale(1); }
         .modal-actions { display: flex; gap: 0.75rem; margin-top: 1.4rem; }
         .modal-actions .btn-panel-primary, .modal-actions .btn-panel-ghost { flex: 1; justify-content: center; }
+
+        html { scroll-behavior: smooth; }
+
+        /* Scroll progress bar */
+        #scrollProgress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            z-index: 120;
+            background: var(--panel-gradient);
+            transition: width 0.08s linear;
+        }
+
+        /* Nút cuộn lên đầu trang (phong cách nút Discord) */
+        .scroll-btn {
+            position: fixed;
+            right: 1.15rem;
+            bottom: 1.5rem;
+            z-index: 95;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.6rem;
+            height: 2.6rem;
+            border-radius: 999px;
+            background: #ffffff;
+            border: 2px solid #0d9488;
+            border-bottom: 3px solid #0f766e;
+            box-shadow: 0 4px 0 #0f766e, 0 8px 18px rgba(13, 148, 136, 0.22);
+            color: #0d9488;
+            font-size: 0.95rem;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(16px) scale(0.85);
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.15s ease;
+        }
+        .scroll-btn.show { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+        .scroll-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 #0f766e, 0 12px 24px rgba(13, 148, 136, 0.32); }
+        .scroll-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #0f766e, 0 4px 10px rgba(13, 148, 136, 0.18); }
+
+        /* Hiệu ứng xuất hiện cho thẻ chi tiết */
+        .fade-enter { animation: fadeUp 0.45s ease both; }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body class="min-h-screen">
+
+    <!-- Scroll progress + nút cuộn lên -->
+    <div id="scrollProgress"></div>
+    <button id="scrollBtn" class="scroll-btn" title="Lên đầu trang" aria-label="Lên đầu trang">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
 
     <!-- Confirm download modal -->
     <div id="confirmModal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
@@ -205,7 +260,7 @@
     <header class="sticky top-0 z-50 border-b border-emerald-200/60 bg-white/85 backdrop-blur-md">
         <div class="mx-auto max-w-5xl px-4 sm:px-6">
             <div class="flex h-16 items-center justify-between">
-                <a href="index.html" class="flex items-center gap-2.5">
+                <a href="index.html#kho" class="flex items-center gap-2.5">
                     <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-600 via-emerald-500 to-emerald-400 text-lg font-extrabold text-white shadow-lg shadow-emerald-500/25">
                         <i class="fa-solid fa-cube"></i>
                     </span>
@@ -213,7 +268,7 @@
                         MOD<span class="panel-gradient-text">ARCHIVE</span>
                     </span>
                 </a>
-                <a href="index.html" class="btn-panel-ghost !py-2 !px-3.5 !text-sm">
+                <a href="index.html#kho" class="btn-panel-ghost !py-2 !px-3.5 !text-sm">
                     <i class="fa-solid fa-arrow-left"></i> Quay lại kho
                 </a>
             </div>
@@ -229,10 +284,10 @@
                 </div>
                 <h1 class="text-2xl font-extrabold text-slate-800">Không tìm thấy file</h1>
                 <p class="mt-2 text-slate-500">Đường dẫn không hợp lệ. Vui lòng quay lại kho lưu trữ.</p>
-                <a href="index.html" class="btn-panel-primary mt-6"><i class="fa-solid fa-box-archive"></i> Về kho lưu trữ</a>
+                <a href="index.html#kho" class="btn-panel-primary mt-6"><i class="fa-solid fa-box-archive"></i> Về kho lưu trữ</a>
             </div>
 
-            <div id="detailContent">
+            <div id="detailContent" class="fade-enter">
                 <div class="detail-card">
                     <div class="flex items-center gap-4">
                         <div id="fileThumb" style="width:4.5rem;height:4.5rem;border-radius:1rem;display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:#fff;background:var(--panel-gradient);flex-shrink:0;overflow:hidden;">
@@ -277,7 +332,7 @@
                         <button id="btnDownload" class="btn-panel-primary w-full justify-center sm:w-auto">
                             <i class="fa-solid fa-cloud-arrow-down"></i> <span id="btnDownloadLabel">Tải xuống</span>
                         </button>
-                        <a href="index.html" class="btn-panel-ghost w-full justify-center sm:w-auto">
+                        <a href="index.html#kho" class="btn-panel-ghost w-full justify-center sm:w-auto">
                             <i class="fa-solid fa-arrow-left"></i> Về kho
                         </a>
                     </div>
@@ -410,7 +465,8 @@
                     a.remove();
                 }
 
-                document.getElementById("btnDownload").addEventListener("click", function () {                    confirmNameEl.textContent = "Tải xuống " + info.name + "?";
+                document.getElementById("btnDownload").addEventListener("click", function () {
+                    confirmNameEl.textContent = "Tải xuống " + info.name + "?";
                     confirmHintEl.textContent = hasExternal
                         ? "Bạn sẽ được chuyển tới trang tải gốc của file này. Tải trực tiếp từ web gốc để đảm bảo an toàn và tránh vi phạm bản quyền."
                         : (isLocal
@@ -429,6 +485,23 @@
                     if (e.key === "Escape") hideConfirm();
                 });
             }
+
+            // ---- Nút cuộn lên đầu trang + thanh tiến trình ----
+            var scrollBtn = document.getElementById("scrollBtn");
+            var scrollProgress = document.getElementById("scrollProgress");
+
+            function onScroll() {
+                var st = window.pageYOffset || document.documentElement.scrollTop;
+                var max = (document.documentElement.scrollHeight || document.body.scrollHeight) - window.innerHeight;
+                if (scrollProgress) scrollProgress.style.width = (max > 0 ? (st / max) * 100 : 0) + "%";
+                if (scrollBtn) scrollBtn.classList.toggle("show", st > 200);
+            }
+            window.addEventListener("scroll", onScroll, { passive: true });
+            onScroll();
+
+            scrollBtn.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
         })();
     </script>
 
