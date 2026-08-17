@@ -267,11 +267,15 @@
                             <span class="info-row-label"><i class="fa-solid fa-weight-hanging mr-2 text-emerald-600"></i>Kích thước</span>
                             <span id="infoSize" class="info-row-value">—</span>
                         </div>
+                        <div class="info-row">
+                            <span class="info-row-label"><i class="fa-solid fa-up-right-from-square mr-2 text-emerald-600"></i>Nguồn / Tác giả</span>
+                            <span id="infoSource" class="info-row-value">—</span>
+                        </div>
                     </div>
 
                     <div class="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                         <button id="btnDownload" class="btn-panel-primary w-full justify-center sm:w-auto">
-                            <i class="fa-solid fa-cloud-arrow-down"></i> Tải xuống
+                            <i class="fa-solid fa-cloud-arrow-down"></i> <span id="btnDownloadLabel">Tải xuống</span>
                         </button>
                         <a href="index.html" class="btn-panel-ghost w-full justify-center sm:w-auto">
                             <i class="fa-solid fa-arrow-left"></i> Về kho
@@ -315,13 +319,16 @@
                 loader: getParam("loader"),
                 type: getParam("type"),
                 thumb: getParam("thumb"),
-                cat: getParam("cat")
+                cat: getParam("cat"),
+                source: getParam("source"),
+                srcurl: getParam("srcurl"),
+                dlurl: getParam("dlurl")
             };
 
             var content = document.getElementById("detailContent");
             var notFound = document.getElementById("notFound");
 
-            if (!info.name || !info.url) {
+            if (!info.name || (!info.url && !info.dlurl)) {
                 content.classList.add("hidden");
                 notFound.classList.remove("hidden");
             } else {
@@ -358,8 +365,22 @@
 
                 document.getElementById("fileDesc").textContent = info.desc || "Không có mô tả cho file này.";
 
-                var isLocal = info.url.indexOf("http") !== 0;
+                var sourceEl = document.getElementById("infoSource");
+                if (info.source) {
+                    if (info.srcurl) {
+                        sourceEl.innerHTML = '<a href="' + esc(info.srcurl) + '" target="_blank" rel="noopener" class="text-emerald-700 underline decoration-emerald-400 decoration-2 underline-offset-2 hover:text-emerald-600">' + esc(info.source) + ' <i class="fa-solid fa-up-right-from-square" style="font-size:0.7rem;"></i></a>';
+                    } else {
+                        sourceEl.textContent = info.source;
+                    }
+                } else {
+                    sourceEl.textContent = "—";
+                }
+
+                var hasExternal = !!info.dlurl;
+                var isLocal = !hasExternal && info.url.indexOf("http") !== 0;
                 var fileName = isLocal ? decodeURIComponent(info.url.split("/").pop()) : "";
+
+                document.getElementById("btnDownloadLabel").textContent = hasExternal ? "Tải từ web gốc" : "Tải xuống";
 
                 var confirmModal = document.getElementById("confirmModal");
                 var confirmNameEl = document.getElementById("confirmModalName");
@@ -371,6 +392,11 @@
                 }
 
                 function performDownload() {
+                    hideConfirm();
+                    if (hasExternal) {
+                        window.open(info.dlurl, "_blank", "noopener");
+                        return;
+                    }
                     var a = document.createElement("a");
                     a.href = info.url;
                     if (isLocal) {
@@ -382,14 +408,14 @@
                     document.body.appendChild(a);
                     a.click();
                     a.remove();
-                    hideConfirm();
                 }
 
-                document.getElementById("btnDownload").addEventListener("click", function () {
-                    confirmNameEl.textContent = "Tải xuống " + info.name + "?";
-                    confirmHintEl.textContent = isLocal
-                        ? "File sẽ được tải về thiết bị của bạn."
-                        : "Bạn sẽ được chuyển tới link tải ngoài.";
+                document.getElementById("btnDownload").addEventListener("click", function () {                    confirmNameEl.textContent = "Tải xuống " + info.name + "?";
+                    confirmHintEl.textContent = hasExternal
+                        ? "Bạn sẽ được chuyển tới trang tải gốc của file này. Tải trực tiếp từ web gốc để đảm bảo an toàn và tránh vi phạm bản quyền."
+                        : (isLocal
+                            ? "File sẽ được tải về thiết bị của bạn."
+                            : "Bạn sẽ được chuyển tới link tải ngoài.");
                     confirmModal.classList.add("show");
                     confirmModal.setAttribute("aria-hidden", "false");
                 });
