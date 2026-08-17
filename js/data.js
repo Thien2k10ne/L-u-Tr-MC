@@ -5,7 +5,9 @@
                         game: "Minecraft",
                         desc: "File ModLoader hỗ trợ nạp mod cho Minecraft.",
                         url: "ModLoader.dll",
-                        size: "49 KB"
+                        size: "49 KB",
+                        source: "Tứ Nhĩ Nhân",
+                        srcurl: "https://discord.gg/4FfQgKWtU6"
                     },
                     {
                         id: "u2",
@@ -13,7 +15,9 @@
                         game: "Minecraft",
                         desc: "File unlock mở khóa tính năng trong game.",
                         url: "unlock.dll",
-                        size: "11.5 KB"
+                        size: "11.5 KB",
+                        source: "Tứ Nhĩ Nhân",
+                        srcurl: "https://discord.gg/4FfQgKWtU6"
                     },
                     {
                         id: "u3",
@@ -21,7 +25,9 @@
                         game: "Hệ thống",
                         desc: "Thư viện Visual C++ Runtime cần thiết để chạy file DLL.",
                         url: "vcruntime140_1.dll",
-                        size: "49 KB"
+                        size: "49 KB",
+                        source: "Tứ Nhĩ Nhân",
+                        srcurl: "https://discord.gg/4FfQgKWtU6"
                     }
                 ];
             window.MC_DATA = [
