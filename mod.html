@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="vi" data-preview-preset="calm">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin file - MOD ARCHIVE</title>
+    <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23059669'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EM%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        panel: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Baloo Bhaijaan 2"', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --panel-emerald: #10b981;
+            --panel-emerald-dark: #059669;
+            --panel-emerald-darker: #047857;
+            --panel-surface: #ffffff;
+            --panel-bg: #f8fafc;
+            --panel-border: rgba(16, 185, 129, 0.30);
+            --panel-gradient: linear-gradient(135deg, #059669 0%, #10b981 52%, #34d399 100%);
+            --preview-edge: rgba(16, 185, 129, 0.30);
+            --preview-edge-hover: rgba(16, 185, 129, 0.55);
+        }
+
+        body {
+            background: #f8fafc;
+            color: #1e293b;
+            font-family: "Baloo Bhaijaan 2", sans-serif;
+        }
+
+        .panel-gradient-text {
+            background: var(--panel-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .btn-panel-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.85rem 1.7rem;
+            border-radius: 0.9rem;
+            background: var(--panel-gradient);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.0625rem;
+            box-shadow: 0 10px 26px rgba(5, 150, 105, 0.28);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-panel-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 34px rgba(5, 150, 105, 0.36);
+        }
+
+        .btn-panel-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0.9rem;
+            background: #ffffff;
+            border: 1px solid var(--preview-edge);
+            color: #047857;
+            font-weight: 700;
+            font-size: 1.0625rem;
+            transition: border-color 0.18s ease, background 0.18s ease;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn-panel-ghost:hover { border-color: var(--preview-edge-hover); background: #f0fdf4; }
+
+        .kicker-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.22);
+            color: #047857;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .badge-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.25rem 0.7rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.03em;
+            background: rgba(16, 185, 129, 0.12);
+            color: #047857;
+            white-space: nowrap;
+        }
+
+        .badge-tag--amber { background: rgba(245, 158, 11, 0.14); color: #b45309; }
+        .badge-tag--sky { background: rgba(14, 165, 233, 0.12); color: #0369a1; }
+
+        .detail-card {
+            background: #ffffff;
+            border: 1px solid var(--preview-edge);
+            border-radius: 1.25rem;
+            padding: 1.75rem;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(16, 185, 129, 0.12);
+        }
+
+        .info-row:last-child { border-bottom: none; }
+        .info-row-label { color: #64748b; font-size: 0.9375rem; font-weight: 600; }
+        .info-row-value { color: #1e293b; font-size: 0.975rem; font-weight: 700; text-align: right; word-break: break-word; }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.25rem;
+            background: rgba(15, 23, 42, 0.55);
+            backdrop-filter: blur(3px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.22s ease;
+        }
+
+        .modal-overlay.show { opacity: 1; pointer-events: auto; }
+
+        .modal-box {
+            width: 100%;
+            max-width: 26rem;
+            border-radius: 1.25rem;
+            background: #ffffff;
+            padding: 1.75rem;
+            text-align: center;
+            transform: translateY(18px) scale(0.97);
+            transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.3);
+        }
+
+        .modal-overlay.show .modal-box { transform: translateY(0) scale(1); }
+        .modal-actions { display: flex; gap: 0.75rem; margin-top: 1.4rem; }
+        .modal-actions .btn-panel-primary, .modal-actions .btn-panel-ghost { flex: 1; justify-content: center; }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Confirm download modal -->
+    <div id="confirmModal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-box">
+            <div class="modal-icon" style="width:4rem;height:4rem;margin:0 auto .9rem;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;background:linear-gradient(135deg,rgba(16,185,129,.14),rgba(52,211,153,.1));color:#047857;">
+                <i class="fa-solid fa-cloud-arrow-down"></i>
+            </div>
+            <div id="confirmModalName" class="modal-name" style="font-size:1.125rem;font-weight:800;line-height:1.35;color:#1e293b;word-break:break-word;">Tải xuống file?</div>
+            <p id="confirmModalHint" class="modal-hint" style="margin-top:.4rem;font-size:.9375rem;line-height:1.55;color:#64748b;">Bạn có chắc muốn tải file này?</p>
+            <div class="modal-actions">
+                <button id="confirmCancel" class="btn-panel-ghost"><i class="fa-solid fa-xmark"></i> Hủy</button>
+                <button id="confirmOk" class="btn-panel-primary"><i class="fa-solid fa-cloud-arrow-down"></i> Tải xuống</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 border-b border-emerald-200/60 bg-white/85 backdrop-blur-md">
+        <div class="mx-auto max-w-5xl px-4 sm:px-6">
+            <div class="flex h-16 items-center justify-between">
+                <a href="index.html" class="flex items-center gap-2.5">
+                    <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-600 via-emerald-500 to-emerald-400 text-lg font-extrabold text-white shadow-lg shadow-emerald-500/25">
+                        <i class="fa-solid fa-cube"></i>
+                    </span>
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900">
+                        MOD<span class="panel-gradient-text">ARCHIVE</span>
+                    </span>
+                </a>
+                <a href="index.html" class="btn-panel-ghost !py-2 !px-3.5 !text-sm">
+                    <i class="fa-solid fa-arrow-left"></i> Quay lại kho
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Detail -->
+    <section class="py-10 sm:py-14">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6">
+            <div id="notFound" class="detail-card hidden text-center">
+                <div style="width:4.5rem;height:4.5rem;margin:0 auto 1rem;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;background:linear-gradient(135deg,rgba(16,185,129,.14),rgba(52,211,153,.1));color:#047857;">
+                    <i class="fa-solid fa-circle-question"></i>
+                </div>
+                <h1 class="text-2xl font-extrabold text-slate-800">Không tìm thấy file</h1>
+                <p class="mt-2 text-slate-500">Đường dẫn không hợp lệ. Vui lòng quay lại kho lưu trữ.</p>
+                <a href="index.html" class="btn-panel-primary mt-6"><i class="fa-solid fa-box-archive"></i> Về kho lưu trữ</a>
+            </div>
+
+            <div id="detailContent">
+                <div class="detail-card">
+                    <div class="flex items-center gap-4">
+                        <div id="fileThumb" style="width:4.5rem;height:4.5rem;border-radius:1rem;display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:#fff;background:var(--panel-gradient);flex-shrink:0;overflow:hidden;">
+                            <i class="fa-solid fa-cubes"></i>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <div id="fileName" class="text-xl font-extrabold leading-snug text-slate-900 sm:text-2xl">...</div>
+                            <div id="fileBadges" class="mt-2 flex flex-wrap gap-2"></div>
+                        </div>
+                    </div>
+
+                    <div id="fileDesc" class="mt-5 rounded-xl bg-slate-50 px-4 py-3 text-[1rem] leading-relaxed text-slate-600"></div>
+
+                    <div class="mt-5 rounded-xl border border-emerald-200/70 px-5">
+                        <div class="info-row">
+                            <span class="info-row-label"><i class="fa-solid fa-tag mr-2 text-emerald-600"></i>Tên file</span>
+                            <span id="infoName" class="info-row-value">...</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-row-label"><i class="fa-solid fa-layer-group mr-2 text-emerald-600"></i>Phiên bản</span>
+                            <span id="infoVersion" class="info-row-value">—</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-row-label"><i class="fa-solid fa-gears mr-2 text-emerald-600"></i>Loader</span>
+                            <span id="infoLoader" class="info-row-value">—</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-row-label"><i class="fa-solid fa-gamepad mr-2 text-emerald-600"></i>Game</span>
+                            <span id="infoGame" class="info-row-value">—</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-row-label"><i class="fa-solid fa-weight-hanging mr-2 text-emerald-600"></i>Kích thước</span>
+                            <span id="infoSize" class="info-row-value">—</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+                        <button id="btnDownload" class="btn-panel-primary w-full justify-center sm:w-auto">
+                            <i class="fa-solid fa-cloud-arrow-down"></i> Tải xuống
+                        </button>
+                        <a href="index.html" class="btn-panel-ghost w-full justify-center sm:w-auto">
+                            <i class="fa-solid fa-arrow-left"></i> Về kho
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-8 text-slate-300">
+        <div class="mx-auto max-w-5xl px-4 text-center sm:px-6">
+            <p class="text-sm text-slate-400">Kho lưu trữ mod Minecraft &amp; file unlock game.</p>
+            <div class="mt-1 text-sm text-slate-500">&copy; 2026 ThZ DEV</div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            "use strict";
+
+            function esc(s) {
+                var d = document.createElement("div");
+                d.textContent = s == null ? "" : String(s);
+                return d.innerHTML;
+            }
+
+            function getParam(name) {
+                var m = new URLSearchParams(window.location.search).get(name);
+                return m == null ? "" : m;
+            }
+
+            var info = {
+                name: getParam("name"),
+                url: getParam("url"),
+                size: getParam("size"),
+                desc: getParam("desc"),
+                game: getParam("game"),
+                version: getParam("version"),
+                loader: getParam("loader"),
+                type: getParam("type"),
+                thumb: getParam("thumb"),
+                cat: getParam("cat")
+            };
+
+            var content = document.getElementById("detailContent");
+            var notFound = document.getElementById("notFound");
+
+            if (!info.name || !info.url) {
+                content.classList.add("hidden");
+                notFound.classList.remove("hidden");
+            } else {
+                notFound.classList.add("hidden");
+                content.classList.remove("hidden");
+
+                document.getElementById("fileName").textContent = info.name;
+                document.getElementById("infoName").textContent = info.name;
+                document.getElementById("infoVersion").textContent = info.version || "—";
+                document.getElementById("infoLoader").textContent = info.loader || "—";
+                document.getElementById("infoGame").textContent = info.game || "—";
+                document.getElementById("infoSize").textContent = info.size || "—";
+
+                var isMc = info.type === "minecraft";
+                var isUnlock = info.type === "unlocks";
+                var thumb = document.getElementById("fileThumb");
+                if (info.thumb) {
+                    thumb.innerHTML = '<img src="' + esc(info.thumb) + '" alt="" style="width:100%;height:100%;object-fit:cover;">';
+                } else {
+                    thumb.innerHTML = '<i class="' + (isMc ? "fa-solid fa-cube" : isUnlock ? "fa-solid fa-unlock" : "fa-solid fa-cubes") + '"></i>';
+                }
+
+                var badges = document.getElementById("fileBadges");
+                var badgeHtml = "";
+                if (info.cat) {
+                    var catNames = { mod: "Mod", texture: "Texture pack", map: "Map", skin: "Skin" };
+                    var catIcons = { mod: "fa-cubes", texture: "fa-palette", map: "fa-map", skin: "fa-user-tie" };
+                    badgeHtml += '<span class="badge-tag"><i class="fa-solid ' + (catIcons[info.cat] || "fa-cubes") + '"></i>' + (catNames[info.cat] || info.cat) + "</span> ";
+                }
+                if (info.game) badgeHtml += '<span class="badge-tag badge-tag--amber"><i class="fa-solid fa-gamepad"></i>' + esc(info.game) + "</span> ";
+                if (info.loader) badgeHtml += '<span class="badge-tag badge-tag--sky"><i class="fa-solid fa-gears"></i>' + esc(info.loader) + "</span> ";
+                if (info.version) badgeHtml += '<span class="badge-tag"><i class="fa-solid fa-layer-group"></i>' + esc(info.version) + "</span> ";
+                badges.innerHTML = badgeHtml;
+
+                document.getElementById("fileDesc").textContent = info.desc || "Không có mô tả cho file này.";
+
+                var isLocal = info.url.indexOf("http") !== 0;
+                var fileName = isLocal ? decodeURIComponent(info.url.split("/").pop()) : "";
+
+                var confirmModal = document.getElementById("confirmModal");
+                var confirmNameEl = document.getElementById("confirmModalName");
+                var confirmHintEl = document.getElementById("confirmModalHint");
+
+                function hideConfirm() {
+                    confirmModal.classList.remove("show");
+                    confirmModal.setAttribute("aria-hidden", "true");
+                }
+
+                function performDownload() {
+                    var a = document.createElement("a");
+                    a.href = info.url;
+                    if (isLocal) {
+                        a.download = fileName;
+                    } else {
+                        a.target = "_blank";
+                        a.rel = "noopener";
+                    }
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                    hideConfirm();
+                }
+
+                document.getElementById("btnDownload").addEventListener("click", function () {
+                    confirmNameEl.textContent = "Tải xuống " + info.name + "?";
+                    confirmHintEl.textContent = isLocal
+                        ? "File sẽ được tải về thiết bị của bạn."
+                        : "Bạn sẽ được chuyển tới link tải ngoài.";
+                    confirmModal.classList.add("show");
+                    confirmModal.setAttribute("aria-hidden", "false");
+                });
+
+                document.getElementById("confirmOk").addEventListener("click", performDownload);
+                document.getElementById("confirmCancel").addEventListener("click", hideConfirm);
+                confirmModal.addEventListener("click", function (e) {
+                    if (e.target === confirmModal) hideConfirm();
+                });
+                document.addEventListener("keydown", function (e) {
+                    if (e.key === "Escape") hideConfirm();
+                });
+            }
+        })();
+    </script>
+
+    <script>
+        (function () {
+            "use strict";
+            function gotoYouTube(e) {
+                if (e) { e.preventDefault(); e.stopPropagation(); }
+                window.location.href = "https://www.youtube.com";
+            }
+            document.addEventListener("keydown", function (e) {
+                var key = e.key || e.keyCode;
+                var isF12 = key === "F12" || e.keyCode === 123;
+                var isCtrlU = (e.ctrlKey || e.metaKey) && (key === "u" || key === "U");
+                var isCtrlShiftI = (e.ctrlKey || e.metaKey) && e.shiftKey && (key === "I" || key === "i");
+                var isCtrlShiftJ = (e.ctrlKey || e.metaKey) && e.shiftKey && (key === "J" || key === "j");
+                var isCtrlShiftC = (e.ctrlKey || e.metaKey) && e.shiftKey && (key === "C" || key === "c");
+                var isCtrlS = (e.ctrlKey || e.metaKey) && (key === "s" || key === "S");
+                if (isF12 || isCtrlU || isCtrlShiftI || isCtrlShiftJ || isCtrlShiftC || isCtrlS) {
+                    gotoYouTube(e);
+                }
+            });
+            document.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+            document.addEventListener("dragstart", function (e) { e.preventDefault(); });
+            document.addEventListener("drop", function (e) { e.preventDefault(); });
+        })();
+    </script>
+</body>
+</html>
