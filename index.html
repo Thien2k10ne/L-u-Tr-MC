@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Kho lưu trữ mod Minecraft và file unlock game — miễn phí, tiện lợi, luôn được cập nhật.">
     <title>MOD ARCHIVE - KHO LƯU TRỮ MOD MINECRAFT &amp; FILE UNLOCK GAME</title>
-    <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23059669'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EM%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/png" href="https://store-images.s-microsoft.com/image/apps.21661.14216416494490173.9772fa78-5a01-45ce-9b9e-6ec61a10f4e2.f787fea4-1e7a-4458-a112-c5ac10fec5c0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap" rel="stylesheet">
@@ -162,6 +162,161 @@
             font-weight: 600;
             line-height: 1.45;
             color: #475569;
+        }
+
+        /* ===== Giới thiệu (kiểu pikamc.vn) ===== */
+        .about-stats {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 1.75rem 1.5rem;
+            border-radius: 1.5rem;
+            background: var(--panel-gradient);
+            overflow: hidden;
+        }
+        .about-stats::before {
+            content: "";
+            position: absolute;
+            top: -60%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 70%);
+        }
+        .about-stat { position: relative; text-align: center; }
+        .about-stat-num {
+            font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+        }
+        .about-stat-label {
+            margin-top: 0.4rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        @media (min-width: 768px) {
+            .about-stats { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        .about-feature {
+            position: relative;
+            padding: 1.5rem;
+            border-radius: 1.25rem;
+            background: #ffffff;
+            border: 1px solid var(--preview-edge);
+            overflow: hidden;
+            transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+        }
+        .about-feature:hover {
+            border-color: var(--preview-edge-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(5, 150, 105, 0.12);
+        }
+        .about-num {
+            position: absolute;
+            top: 1.05rem;
+            right: 1.3rem;
+            font-size: 2.7rem;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            color: rgba(16, 185, 129, 0.15);
+            user-select: none;
+        }
+        .about-feature-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.9rem;
+            background: var(--panel-gradient);
+            color: #ffffff;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 18px rgba(5, 150, 105, 0.28);
+        }
+        .about-feature-title {
+            margin-top: 1rem;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #0f172a;
+        }
+        .about-feature-text {
+            margin-top: 0.45rem;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: #64748b;
+        }
+
+        .faq-item {
+            border: 1px solid var(--preview-edge);
+            border-radius: 1rem;
+            background: #ffffff;
+            overflow: hidden;
+            transition: border-color 0.22s ease, box-shadow 0.22s ease;
+        }
+        .faq-item.open {
+            border-color: var(--preview-edge-hover);
+            box-shadow: 0 10px 24px rgba(5, 150, 105, 0.1);
+        }
+        .faq-question {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            text-align: left;
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: #0f172a;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .faq-caret {
+            flex-shrink: 0;
+            color: #047857;
+            transition: transform 0.25s ease;
+        }
+        .faq-item.open .faq-caret { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.32s ease; }
+        .faq-item.open .faq-answer { max-height: 260px; }
+        .faq-answer-inner {
+            padding: 0 1.25rem 1.15rem;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: #64748b;
+        }
+
+        .about-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.25rem;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            border-radius: 1.5rem;
+            border: 1px solid var(--preview-edge);
+            background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 60%);
+        }
+        .about-cta-title {
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-weight: 800;
+            color: #0f172a;
+        }
+        .about-cta-text {
+            margin-top: 0.4rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        @media (min-width: 768px) {
+            .about-cta { flex-direction: row; justify-content: space-between; text-align: left; padding: 3rem; }
         }
 
         /* Tabs */
@@ -648,18 +803,17 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 1.5rem;
-            perspective: 900px;
+            gap: 1rem;
         }
 
-        /* Quầng sáng sau cube */
+        /* Quầng sáng phía sau icon */
         .preloader-inner::before {
             content: "";
             position: absolute;
-            width: 180px;
-            height: 180px;
+            width: 170px;
+            height: 170px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(13, 148, 136, 0.3) 0%, rgba(13, 148, 136, 0.1) 45%, transparent 70%);
+            background: radial-gradient(circle, rgba(13, 148, 136, 0.28) 0%, rgba(13, 148, 136, 0.08) 45%, transparent 70%);
             filter: blur(6px);
             animation: glowPulse 2.6s ease-in-out infinite;
             pointer-events: none;
@@ -670,52 +824,43 @@
             50% { transform: scale(1.15); opacity: 1; }
         }
 
-        .cube {
-            width: 64px;
-            height: 64px;
-            position: relative;
-            transform-style: preserve-3d;
-            animation: cubeSpin 3s linear infinite;
-            filter: drop-shadow(0 0 18px rgba(13, 148, 136, 0.35));
-        }
-
-        .cube-face {
-            position: absolute;
-            width: 64px;
-            height: 64px;
-            border-radius: 10px;
-            background: rgba(13, 148, 136, 0.08);
-            border: 2px solid #0d9488;
-            box-shadow: inset 0 0 22px rgba(13, 148, 136, 0.18);
-            backface-visibility: visible;
-        }
-
-        /* Mặt sau/trong đậm hơn để tạo chiều sâu khối kính sáng */
-        .cube-face--front  { transform: translateZ(32px); }
-        .cube-face--back   { transform: rotateY(180deg) translateZ(32px); background: rgba(13, 148, 136, 0.14); }
-        .cube-face--right  { transform: rotateY(90deg) translateZ(32px); background: rgba(13, 148, 136, 0.14); }
-        .cube-face--left   { transform: rotateY(-90deg) translateZ(32px); background: rgba(13, 148, 136, 0.14); }
-        .cube-face--top    { transform: rotateX(90deg) translateZ(32px); background: rgba(13, 148, 136, 0.2); }
-        .cube-face--bottom { transform: rotateX(-90deg) translateZ(32px); background: rgba(13, 148, 136, 0.2); }
-
-        @keyframes cubeSpin {
-            0%   { transform: rotateX(-18deg) rotateY(0deg); }
-            100% { transform: rotateX(-18deg) rotateY(360deg); }
-        }
-
-        .preloader-label {
-            font-size: 0.8rem;
+        /* Icon >_< hiện lên từ từ */
+        .preloader-icon {
+            font-size: 3.2rem;
             font-weight: 800;
-            letter-spacing: 0.18em;
+            line-height: 1;
+            letter-spacing: 0.02em;
+            color: #0d9488;
+            opacity: 0;
+            transform: scale(0.8) translateY(10px);
+            animation: iconAppear 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            text-shadow: 0 0 24px rgba(13, 148, 136, 0.35);
+        }
+
+        @keyframes iconAppear {
+            0% { opacity: 0; transform: scale(0.8) translateY(10px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        /* Chữ loading... nhấp nháy */
+        .preloader-loading {
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
             text-transform: uppercase;
             color: #0d9488;
-            text-align: center;
-            animation: labelPulse 1.6s ease-in-out infinite;
+            opacity: 0;
+            animation: loadingPulse 1.3s ease-in-out infinite, loadingIn 0.8s ease 0.5s forwards;
         }
 
-        @keyframes labelPulse {
-            0%, 100% { opacity: 0.4; }
+        @keyframes loadingPulse {
+            0%, 100% { opacity: 0.35; }
             50% { opacity: 1; }
+        }
+
+        @keyframes loadingIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         /* Discord button - pill style */        .btn-discord {
@@ -751,22 +896,115 @@
         @media (max-width: 767px) {
             .btn-discord { padding: 0.45rem 0.95rem; font-size: 0.8rem; }
         }
+
+        /* Scroll progress bar */
+        #scrollProgress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            z-index: 120;
+            background: var(--panel-gradient);
+            transition: width 0.08s linear;
+        }
+
+        /* Nút cuộn lên đầu trang (phong cách nút Discord) */
+        .scroll-btn {
+            position: fixed;
+            right: 1.15rem;
+            bottom: 5.75rem;
+            z-index: 95;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.6rem;
+            height: 2.6rem;
+            border-radius: 999px;
+            background: #ffffff;
+            border: 2px solid #0d9488;
+            border-bottom: 3px solid #0f766e;
+            box-shadow: 0 4px 0 #0f766e, 0 8px 18px rgba(13, 148, 136, 0.22);
+            color: #0d9488;
+            font-size: 0.95rem;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(16px) scale(0.85);
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.15s ease;
+        }
+        .scroll-btn.show { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+        .scroll-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 #0f766e, 0 12px 24px rgba(13, 148, 136, 0.32); }
+        .scroll-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #0f766e, 0 4px 10px rgba(13, 148, 136, 0.18); }
+        @media (min-width: 768px) { .scroll-btn { right: 1.5rem; bottom: 1.5rem; } }
+
+        /* Vật thể nổi trong hero */
+        .float-orb {
+            position: absolute;
+            z-index: 0;
+            color: rgba(5, 150, 105, 0.16);
+            animation: floatOrb 7s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .float-orb i { animation: floatSpin 16s linear infinite; }
+        @keyframes floatOrb {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-24px); }
+        }
+        @keyframes floatSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        /* Quầng sáng di động sau hero */
+        .hero-glow {
+            position: absolute;
+            z-index: 0;
+            border-radius: 999px;
+            filter: blur(70px);
+            opacity: 0.5;
+            animation: glowDrift 12s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes glowDrift {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(32px, -26px) scale(1.12); }
+        }
+
+        /* Zoom ảnh bìa khi hover card */
+        .mod-thumb img { transition: transform 0.4s ease; }
+        .mod-card:hover .mod-thumb img { transform: scale(1.12); }
+
+        /* Shimmer chạy trên nút chính */
+        .btn-panel-primary {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-panel-primary::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+            transform: translateX(-150%);
+            animation: shimmerMove 3.4s ease-in-out infinite;
+        }
+        @keyframes shimmerMove {
+            0%, 55% { transform: translateX(-150%); }
+            85%, 100% { transform: translateX(150%); }
+        }
     </style>
 </head>
 <body class="min-h-screen">
 
+    <!-- Scroll progress + nút cuộn lên -->
+    <div id="scrollProgress"></div>
+    <button id="scrollBtn" class="scroll-btn" title="Lên đầu trang" aria-label="Lên đầu trang">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
 <!-- Preloader -->
     <div id="preloader" class="preloader" style="position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:#ffffff;">
-        <div class="preloader-inner" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;">
-            <div class="cube" aria-hidden="true">
-                <div class="cube-face cube-face--front"></div>
-                <div class="cube-face cube-face--back"></div>
-                <div class="cube-face cube-face--right"></div>
-                <div class="cube-face cube-face--left"></div>
-                <div class="cube-face cube-face--top"></div>
-                <div class="cube-face cube-face--bottom"></div>
-            </div>
-            <div class="preloader-label" style="color:#0d9488;">MOD ARCHIVE</div>
+        <div class="preloader-inner" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;">
+            <div class="preloader-icon">&gt;_&lt;</div>
+            <div class="preloader-loading">loading...</div>
         </div>
     </div>
 
@@ -787,7 +1025,7 @@
     <header class="sticky top-0 z-50 border-b border-emerald-200/60 bg-white/85 backdrop-blur-md">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
-                <a href="#" class="flex items-center gap-2.5">
+                <a href="#" data-route="trangchu" class="flex items-center gap-2.5">
                     <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-600 via-emerald-500 to-emerald-400 text-lg font-extrabold text-white shadow-lg shadow-emerald-500/25">
                         <i class="fa-solid fa-cube"></i>
                     </span>
@@ -797,9 +1035,9 @@
                 </a>
 
                 <nav class="hidden items-center gap-1 md:flex">
-                    <a href="#home" class="rounded-lg px-3.5 py-2 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-50">Trang chủ</a>
-                    <a href="#archive" class="rounded-lg px-3.5 py-2 text-sm font-semibold text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-700">Kho lưu trữ</a>
-                    <a href="#about" class="rounded-lg px-3.5 py-2 text-sm font-semibold text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-700">Giới thiệu</a>
+                    <a href="#" data-route="trangchu" class="rounded-lg px-3.5 py-2 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-50">Trang chủ</a>
+                    <a href="#" data-route="kho" class="rounded-lg px-3.5 py-2 text-sm font-semibold text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-700">Kho lưu trữ</a>
+                    <a href="#" data-route="trangchu" data-goto-about class="rounded-lg px-3.5 py-2 text-sm font-semibold text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-700">Giới thiệu</a>
                     <a href="https://discord.gg/km5DcVdwrU" target="_blank" rel="noopener" class="btn-discord ml-2">
                         <i class="fa-brands fa-discord"></i> Discord
                     </a>
@@ -815,22 +1053,22 @@
             <!-- Mobile nav -->
             <div id="navMobile" class="max-h-0 md:hidden">
                 <div class="flex flex-col gap-1 pb-4">
-                    <a href="#home" class="flex items-center gap-3 rounded-lg px-3.5 py-3 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">
+                    <a href="#" data-route="trangchu" class="flex items-center gap-3 rounded-lg px-3.5 py-3 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">
                         <i class="fa-solid fa-house w-5 text-center"></i> Trang chủ
                     </a>
-                    <a href="#archive" class="flex items-center gap-3 rounded-lg px-3.5 py-3 text-sm font-semibold text-slate-600 hover:bg-emerald-50">
+                    <a href="#" data-route="kho" class="flex items-center gap-3 rounded-lg px-3.5 py-3 text-sm font-semibold text-slate-600 hover:bg-emerald-50">
                         <i class="fa-solid fa-box-archive w-5 text-center"></i> Kho lưu trữ
                     </a>
-                    <a href="#archive" data-goto-tab="mods" class="flex items-center gap-3 rounded-lg px-3.5 py-3 text-sm font-semibold text-slate-600 hover:bg-emerald-50">
+                    <a href="#" data-route="kho" data-goto-tab="mods" class="flex items-center gap-3 rounded-lg px-3.5 py-3 text-sm font-semibold text-slate-600 hover:bg-emerald-50">
                         <i class="fa-solid fa-cubes w-5 text-center"></i> Mod
                     </a>
-                    <a href="#archive" data-goto-tab="minecraft" class="flex items-center gap-3 rounded-lg px-3.5 py-3 text-sm font-semibold text-slate-600 hover:bg-emerald-50">
+                    <a href="#" data-route="kho" data-goto-tab="minecraft" class="flex items-center gap-3 rounded-lg px-3.5 py-3 text-sm font-semibold text-slate-600 hover:bg-emerald-50">
                         <i class="fa-solid fa-cube w-5 text-center"></i> Minecraft
                     </a>
-                    <a href="#archive" data-goto-tab="unlocks" class="flex items-center gap-3 rounded-lg px-3.5 py-3 text-sm font-semibold text-slate-600 hover:bg-emerald-50">
+                    <a href="#" data-route="kho" data-goto-tab="unlocks" class="flex items-center gap-3 rounded-lg px-3.5 py-3 text-sm font-semibold text-slate-600 hover:bg-emerald-50">
                         <i class="fa-solid fa-unlock w-5 text-center"></i> File Unlock
                     </a>
-                    <a href="#about" class="flex items-center gap-3 rounded-lg px-3.5 py-3 text-sm font-semibold text-slate-600 hover:bg-emerald-50">
+                    <a href="#" data-route="trangchu" data-goto-about class="flex items-center gap-3 rounded-lg px-3.5 py-3 text-sm font-semibold text-slate-600 hover:bg-emerald-50">
                         <i class="fa-solid fa-circle-info w-5 text-center"></i> Giới thiệu
                     </a>
                     <a href="https://discord.gg/km5DcVdwrU" target="_blank" rel="noopener" class="btn-discord mt-1 w-full justify-center !py-2.5">
@@ -847,6 +1085,12 @@
         <div class="pointer-events-none absolute inset-0" style="background: linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.12) 55%, rgba(248,250,252,0.85) 100%);"></div>
         <div class="pointer-events-none absolute inset-0" aria-hidden="true">
             <div class="absolute inset-0 opacity-40" style="background-image: linear-gradient(rgba(16,185,129,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.06) 1px, transparent 1px); background-size: 2.5rem 2.5rem; mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, #000 25%, transparent 75%);"></div>
+            <div class="hero-glow" style="left: -6rem; top: 2rem; width: 22rem; height: 22rem; background: radial-gradient(circle, rgba(16,185,129,0.55) 0%, rgba(16,185,129,0) 70%);"></div>
+            <div class="hero-glow" style="right: -5rem; bottom: 1rem; width: 18rem; height: 18rem; background: radial-gradient(circle, rgba(52,211,153,0.5) 0%, rgba(52,211,153,0) 70%); animation-delay: 2s;"></div>
+            <div class="float-orb" style="left: 9%; top: 24%; font-size: 2.6rem; animation-delay: 0.3s;"><i class="fa-solid fa-cube"></i></div>
+            <div class="float-orb" style="right: 11%; top: 30%; font-size: 2rem; animation-delay: 1.4s;"><i class="fa-solid fa-cube"></i></div>
+            <div class="float-orb" style="left: 16%; bottom: 18%; font-size: 1.7rem; animation-delay: 2.4s;"><i class="fa-solid fa-cube"></i></div>
+            <div class="float-orb" style="right: 19%; bottom: 26%; font-size: 1.9rem; animation-delay: 0.8s;"><i class="fa-solid fa-cube"></i></div>
         </div>
 
         <div class="relative mx-auto max-w-7xl px-4 pb-16 pt-16 sm:px-6 sm:pt-24 lg:px-8">
@@ -859,14 +1103,19 @@
                     Trung tâm lưu trữ tất cả bản mod, file unlock dành cho game của bạn. Dễ tìm, dễ tải, cập nhật liên tục.
                 </p>
                 <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-                    <a href="#archive" class="btn-panel-primary">
+                    <a href="#" data-route="kho" class="btn-panel-primary">
                         <i class="fa-solid fa-magnifying-glass"></i> Khám phá kho
                     </a>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <!-- ============ ARCHIVE ============ -->
+    <section id="archive" class="border-y border-emerald-200/60 bg-white py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <!-- Stats band -->
-            <div class="mx-auto mt-14 grid max-w-5xl grid-cols-2 gap-4 lg:grid-cols-4">
+            <div class="mx-auto mb-12 grid max-w-5xl grid-cols-2 gap-4 lg:grid-cols-4">
                 <div class="stat-card">
                     <span class="stat-card-icon"><i class="fa-solid fa-cubes"></i></span>
                     <span class="stat-card-value" id="statMods">0</span>
@@ -888,12 +1137,7 @@
                     <span class="stat-card-label">Tổng file</span>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- ============ ARCHIVE ============ -->
-    <section id="archive" class="border-y border-emerald-200/60 bg-white py-16 sm:py-20">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-3xl text-center reveal">
                 <span class="kicker-pill"><i class="fa-solid fa-box-archive"></i> Kho lưu trữ</span>
                 <h2 class="section-title mt-4">Tìm kiếm file dễ dàng</h2>
@@ -932,8 +1176,6 @@
                     <input id="searchInput" type="text" placeholder="Tìm theo tên, mô tả..." class="form-input !pl-11">
                 </div>
             </div>
-            <p id="modsFolderInfo" class="mt-3 hidden text-center text-sm font-semibold text-emerald-700"></p>
-
             <!-- Lists -->
             <div class="mt-8">
                 <!-- Mods grid -->
@@ -944,45 +1186,128 @@
 
                 <!-- Minecraft versions grid -->
                 <div id="minecraftGrid" class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 hidden"></div>
+
+                <!-- Nút hiện thêm (dùng chung cho tab đang mở) -->
+                <div id="moreWrap" class="mt-6 hidden text-center">
+                    <button type="button" id="btnMore" class="btn-panel-ghost"><i class="fa-solid fa-plus"></i> Hiện thêm</button>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ============ ABOUT ============ -->
-    <section id="about" class="border-t border-emerald-200/60 bg-white py-16 sm:py-20">
+    <section id="about" class="border-t border-emerald-200/60 bg-white py-16 sm:py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
             <div class="mx-auto max-w-3xl text-center reveal">
-                <span class="kicker-pill"><i class="fa-solid fa-heart"></i> Về chúng tôi</span>
-                <h2 class="section-title mt-4">Một kho lưu trữ đơn giản, đầy đủ</h2>
-                <p class="section-subtitle mt-3">Tất cả mod và file unlock được tập trung tại một nơi, dễ dàng quản lý và tải về.</p>
+                <span class="kicker-pill"><i class="fa-solid fa-heart"></i> Giới thiệu</span>
+                <h2 class="section-title mt-4">Vì sao nên chọn MOD ARCHIVE?</h2>
+                <p class="section-subtitle mt-3">Mọi thứ cho Minecraft và game của bạn — tập trung tại một kho, miễn phí và luôn cập nhật.</p>
             </div>
 
-            <div class="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
-                <div class="stat-card reveal items-start text-left !gap-3 !p-6">
-                    <span class="stat-card-icon"><i class="fa-solid fa-cubes"></i></span>
-                    <h3 class="text-lg font-extrabold text-slate-900">Mod Minecraft</h3>
-                    <p class="text-[0.95rem] leading-relaxed text-slate-500">Tổng hợp các bản mod phổ biến theo từng phiên bản, loader Fabric/Forge với mô tả chi tiết.</p>
+            <!-- Tính năng đánh số -->
+            <div class="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="about-feature reveal">
+                    <span class="about-num">01</span>
+                    <span class="about-feature-icon"><i class="fa-solid fa-gift"></i></span>
+                    <h3 class="about-feature-title">Miễn phí 100%</h3>
+                    <p class="about-feature-text">Tải file hoàn toàn miễn phí, không phí ẩn, không cần đăng ký tài khoản.</p>
                 </div>
-                <div class="stat-card reveal items-start text-left !gap-3 !p-6">
-                    <span class="stat-card-icon"><i class="fa-solid fa-unlock"></i></span>
-                    <h3 class="text-lg font-extrabold text-slate-900">File Unlock Game</h3>
-                    <p class="text-[0.95rem] leading-relaxed text-slate-500">Lưu trữ file unlock, tool hỗ trợ game được chia sẻ theo chuyên mục, dễ tìm kiếm.</p>
+                <div class="about-feature reveal">
+                    <span class="about-num">02</span>
+                    <span class="about-feature-icon"><i class="fa-solid fa-rotate"></i></span>
+                    <h3 class="about-feature-title">Cập nhật liên tục</h3>
+                    <p class="about-feature-text">Bản Minecraft và mod mới được bổ sung thường xuyên, sẵn sàng tải ngay.</p>
                 </div>
-                <div class="stat-card reveal items-start text-left !gap-3 !p-6">
-                    <span class="stat-card-icon"><i class="fa-solid fa-shield-halved"></i></span>
-                    <h3 class="text-lg font-extrabold text-slate-900">Miễn phí &amp; an toàn</h3>
-                    <p class="text-[0.95rem] leading-relaxed text-slate-500">Tải file miễn phí, không quảng cáo phiền phức. Dữ liệu được lưu trữ gọn gàng trên thiết bị.</p>
+                <div class="about-feature reveal">
+                    <span class="about-num">03</span>
+                    <span class="about-feature-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <h3 class="about-feature-title">Dễ dàng tìm kiếm</h3>
+                    <p class="about-feature-text">Tìm theo tên, chuyên mục, loader hay phiên bản — chỉ mất vài giây.</p>
                 </div>
+                <div class="about-feature reveal">
+                    <span class="about-num">04</span>
+                    <span class="about-feature-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                    <h3 class="about-feature-title">An toàn, sạch quảng cáo</h3>
+                    <p class="about-feature-text">Không popup phiền phức, không link rác. Nội dung được gọt gàng, dễ quản lý.</p>
+                </div>
+                <div class="about-feature reveal">
+                    <span class="about-num">05</span>
+                    <span class="about-feature-icon"><i class="fa-solid fa-headset"></i></span>
+                    <h3 class="about-feature-title">Hỗ trợ tận tình</h3>
+                    <p class="about-feature-text">Cộng đồng Discord sẵn sàng giúp đỡ khi bạn gặp lỗi cài đặt hay cần tìm file.</p>
+                </div>
+                <div class="about-feature reveal">
+                    <span class="about-num">06</span>
+                    <span class="about-feature-icon"><i class="fa-solid fa-box-open"></i></span>
+                    <h3 class="about-feature-title">Đa dạng nội dung</h3>
+                    <p class="about-feature-text">Từ mod, texture pack, map đến file unlock game — tất cả có mặt trong một kho.</p>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="mx-auto mt-16 max-w-3xl">
+                <div class="text-center reveal">
+                    <span class="kicker-pill"><i class="fa-solid fa-circle-question"></i> Hỏi đáp nhanh</span>
+                    <h3 class="section-title mt-3 text-2xl sm:text-3xl">Câu hỏi thường gặp</h3>
+                </div>
+                <div class="mt-8 space-y-3">
+                    <div class="faq-item reveal">
+                        <button type="button" class="faq-question" aria-expanded="false">
+                            <span>Làm sao để tải mod từ kho?</span>
+                            <i class="fa-solid fa-chevron-down faq-caret"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">Vào mục Kho lưu trữ, chọn tab Mod, nhấn "Tải về" hoặc "Xem &amp; tải" trên mỗi thẻ để xem thông tin chi tiết và tải file về thiết bị.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <button type="button" class="faq-question" aria-expanded="false">
+                            <span>Các file trong kho có an toàn không?</span>
+                            <i class="fa-solid fa-chevron-down faq-caret"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">Toàn bộ file được chia sẻ từ nguồn tin cậy và quản lý trong kho một cách gọn gàng. Luôn tải file tại trang chính thức mà MOD ARCHIVE dẫn đến để đảm bảo an toàn nhất.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <button type="button" class="faq-question" aria-expanded="false">
+                            <span>Cập nhật bản Minecraft mới nhanh không?</span>
+                            <i class="fa-solid fa-chevron-down faq-caret"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">Mỗi bản Minecraft mới được phát hành sẽ được thêm vào mục Minecraft trong thời gian sớm nhất, kèm đầy đủ thông tin phiên bản để bạn dễ chọn.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <button type="button" class="faq-question" aria-expanded="false">
+                            <span>Cần hỗ trợ thì liên hệ ở đâu?</span>
+                            <i class="fa-solid fa-chevron-down faq-caret"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">Bạn có thể tham gia cộng đồng Discord của chúng tôi để được hỗ trợ nhanh chóng, hoặc gửi phản hồi trực tiếp qua các kênh liên hệ của kho.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="about-cta reveal mt-14">
+                <div>
+                    <h3 class="about-cta-title">Sẵn sàng khám phá kho lưu trữ?</h3>
+                    <p class="about-cta-text">Tìm mod, bản Minecraft và file unlock ngay bây giờ — hoàn toàn miễn phí.</p>
+                </div>
+                <a href="#" data-route="kho" data-goto-tab="mods" class="btn-panel-primary"><i class="fa-solid fa-rocket"></i> Vào kho lưu trữ</a>
             </div>
         </div>
     </section>
 
     <!-- Bottom mobile nav -->
     <nav id="bottomNav" class="bottom-nav md:hidden">
-        <a href="#home" data-nav="home"><i class="fa-solid fa-house"></i> Trang chủ</a>
-        <a href="#archive" data-goto-tab="mods" data-nav="mods"><i class="fa-solid fa-cubes"></i> Mod</a>
-        <a href="#archive" data-goto-tab="minecraft" data-nav="minecraft"><i class="fa-solid fa-cube"></i> Minecraft</a>
-        <a href="#archive" data-goto-tab="unlocks" data-nav="unlocks"><i class="fa-solid fa-unlock"></i> Unlock</a>
+        <a href="#" data-route="trangchu" data-nav="trangchu"><i class="fa-solid fa-house"></i> Trang chủ</a>
+        <a href="#" data-route="kho" data-goto-tab="mods" data-nav="mods"><i class="fa-solid fa-cubes"></i> Mod</a>
+        <a href="#" data-route="kho" data-goto-tab="minecraft" data-nav="minecraft"><i class="fa-solid fa-cube"></i> Minecraft</a>
+        <a href="#" data-route="kho" data-goto-tab="unlocks" data-nav="unlocks"><i class="fa-solid fa-unlock"></i> Unlock</a>
     </nav>
 
     <!-- ============ FOOTER ============ -->
@@ -1178,6 +1503,204 @@
                         desc: "APK Minecraft phiên bản 1.21.120.",
                         url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.120_BANDISHARE.apk",
                         size: ""
+                    },
+                    {
+                        id: "mc15",
+                        name: "Minecraft PE 1.21.114",
+                        version: "1.21.114",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.114.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.114-arm64-v8a_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc16",
+                        name: "Minecraft PE 1.21.113",
+                        version: "1.21.113",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.113.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.113_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc17",
+                        name: "Minecraft PE 1.21.111",
+                        version: "1.21.111",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.111.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.111_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc18",
+                        name: "Minecraft PE 1.21.100",
+                        version: "1.21.100",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.100.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.100_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc19",
+                        name: "Minecraft PE 1.21.94",
+                        version: "1.21.94",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.94.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.94_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc20",
+                        name: "Minecraft PE 1.21.93",
+                        version: "1.21.93",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.93.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.93_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc21",
+                        name: "Minecraft PE 1.21.92",
+                        version: "1.21.92",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.92.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.92_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc22",
+                        name: "Minecraft PE 1.21.80",
+                        version: "1.21.80",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.80.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.80_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc23",
+                        name: "Minecraft PE 1.21.71",
+                        version: "1.21.71",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.71.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.71_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc24",
+                        name: "Minecraft PE 1.21.70",
+                        version: "1.21.70",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.70.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.70_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc25",
+                        name: "Minecraft PE 1.21.62",
+                        version: "1.21.62",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.62.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.62_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc26",
+                        name: "Minecraft PE 1.21.61",
+                        version: "1.21.61",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.61.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.61_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc27",
+                        name: "Minecraft PE 1.21.51",
+                        version: "1.21.51",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.51.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.51_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc28",
+                        name: "Minecraft PE 1.21.50",
+                        version: "1.21.50",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.50.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.50_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc29",
+                        name: "Minecraft PE 1.21.44",
+                        version: "1.21.44",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.44.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.44_BANDISHARE.iO.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc30",
+                        name: "Minecraft PE 1.21.43",
+                        version: "1.21.43",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.43.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.43_BANDISHARE.iO.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc31",
+                        name: "Minecraft PE 1.21.31",
+                        version: "1.21.31",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.31.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.31_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc32",
+                        name: "Minecraft PE 1.21.30",
+                        version: "1.21.30",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.30.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.30_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc33",
+                        name: "Minecraft PE 1.21.22",
+                        version: "1.21.22",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.22.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.22_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc34",
+                        name: "Minecraft PE 1.21.20",
+                        version: "1.21.20",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.20.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.20_BANDISHARE.iO.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc35",
+                        name: "Minecraft PE 1.21.1",
+                        version: "1.21.1",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.1.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.1_BANDISHARE.apk",
+                        size: ""
+                    },
+                    {
+                        id: "mc36",
+                        name: "Minecraft PE 1.21.0",
+                        version: "1.21.0",
+                        game: "Minecraft",
+                        desc: "APK Minecraft phiên bản 1.21.0.",
+                        url: "https://dl.bandishare.com/MCPE/Minecraft_PE_1.21.0_BANDISHARE.apk",
+                        size: ""
                     }
                 ];
 
@@ -1209,10 +1732,14 @@
                 return (n >= 100 ? Math.round(n) : Math.round(n * 10) / 10) + " " + units[i];
             }
 
-            function buildCard(item, kind) {
+            var LOGO_URL = "https://store-images.s-microsoft.com/image/apps.21661.14216416494490173.9772fa78-5a01-45ce-9b9e-6ec61a10f4e2.f787fea4-1e7a-4458-a112-c5ac10fec5c0";
+
+            function buildCard(item, kind, idx) {
                 var thumb = item.thumb
                     ? '<div class="mod-thumb"><img src="' + esc(item.thumb) + '" alt=""></div>'
-                    : '<div class="mod-thumb"><i class="' + (kind === "mods" ? "fa-solid fa-cubes" : kind === "minecraft" ? "fa-solid fa-cube" : "fa-solid fa-unlock") + '"></i></div>';
+                    : kind === "minecraft"
+                        ? '<div class="mod-thumb"><img src="' + LOGO_URL + '" alt=""></div>'
+                        : '<div class="mod-thumb"><i class="' + (kind === "mods" ? "fa-solid fa-cubes" : "fa-solid fa-unlock") + '"></i></div>';
 
                 var badges = "";
                 if (kind === "mods" && item.cat) {
@@ -1253,7 +1780,7 @@
                 }
 
                 return (
-                    '<div class="mod-card fade-enter" data-id="' + esc(item.id) + '">' +
+                    '<div class="mod-card fade-enter" data-id="' + esc(item.id) + '" style="animation-delay:' + ((idx || 0) * 0.04).toFixed(2) + 's">' +
                         '<div class="mod-card-head">' + thumb +
                             '<div class="min-w-0 flex-1">' +
                                 '<div class="mod-name truncate" title="' + esc(item.name) + '">' + esc(item.name) + "</div>" +
@@ -1270,15 +1797,30 @@
 
             var currentTab = "mods";
 
+            function setStat(id, target) {
+                var el = document.getElementById(id);
+                if (!el) return;
+                var start = null;
+                var dur = 900;
+                function step(ts) {
+                    if (start === null) start = ts;
+                    var p = Math.min((ts - start) / dur, 1);
+                    var eased = 1 - Math.pow(1 - p, 3);
+                    el.textContent = Math.round(target * eased);
+                    if (p < 1) requestAnimationFrame(step);
+                }
+                requestAnimationFrame(step);
+            }
+
             function renderAll() {
                 var modsCount = mods.length;
                 var mcCount = minecraftVersions.length;
                 var unlocksCount = unlocks.length;
 
-                document.getElementById("statMods").textContent = modsCount;
-                document.getElementById("statMinecraft").textContent = mcCount;
-                document.getElementById("statUnlocks").textContent = unlocksCount;
-                document.getElementById("statTotal").textContent = modsCount + mcCount + unlocksCount;
+                setStat("statMods", modsCount);
+                setStat("statMinecraft", mcCount);
+                setStat("statUnlocks", unlocksCount);
+                setStat("statTotal", modsCount + mcCount + unlocksCount);
                 document.getElementById("countMods").textContent = modsCount;
                 document.getElementById("countMinecraft").textContent = mcCount;
                 document.getElementById("countUnlocks").textContent = unlocksCount;
@@ -1287,6 +1829,7 @@
                 renderList("mods");
                 renderList("minecraft");
                 renderList("unlocks");
+                renderList(currentTab);
             }
 
             var currentModCat = "all";
@@ -1371,18 +1914,35 @@
                 document.getElementById("catCountSkin").textContent = counts.skin;
             }
 
+            var PAGE_SIZE = 20;
+            var visibleCount = { mods: PAGE_SIZE, minecraft: PAGE_SIZE, unlocks: PAGE_SIZE };
+
+            function resetVisible(kind) {
+                visibleCount[kind] = PAGE_SIZE;
+            }
+
             function renderList(kind) {
                 var grid = document.getElementById(kind + "Grid");
+                var moreWrap = document.getElementById("moreWrap");
                 var list = getFiltered(kind);
                 if (!list.length) {
                     grid.innerHTML = emptyStateHTML(kind);
                     grid.classList.remove("grid");
                     grid.classList.add("block");
-                } else {
-                    grid.classList.add("grid");
-                    grid.classList.remove("block");
-                    var ordered = sortByPopularity(list);
-                    grid.innerHTML = ordered.map(function (item) { return buildCard(item, kind); }).join("");
+                    if (moreWrap) moreWrap.classList.add("hidden");
+                    return;
+                }
+                grid.classList.add("grid");
+                grid.classList.remove("block");
+                var ordered = sortByPopularity(list);
+                var show = ordered.slice(0, visibleCount[kind]);
+                grid.innerHTML = show.map(function (item, i) { return buildCard(item, kind, i); }).join("");
+                if (moreWrap) {
+                    if (ordered.length > show.length) {
+                        moreWrap.classList.remove("hidden");
+                    } else {
+                        moreWrap.classList.add("hidden");
+                    }
                 }
             }
 
@@ -1391,14 +1951,18 @@
                 document.querySelectorAll(".archive-tab[data-tab]").forEach(function (b) {
                     b.classList.toggle("active", b.getAttribute("data-tab") === tab);
                 });
-                document.getElementById("modsGrid").classList.toggle("hidden", tab !== "mods");
-                document.getElementById("minecraftGrid").classList.toggle("hidden", tab !== "minecraft");
-                document.getElementById("unlocksGrid").classList.toggle("hidden", tab !== "unlocks");
+                ["mods", "minecraft", "unlocks"].forEach(function (k) {
+                    var g = document.getElementById(k + "Grid");
+                    if (g) g.classList.toggle("hidden", k !== tab);
+                });
                 document.getElementById("modCats").classList.toggle("hidden", tab !== "mods");
+                resetVisible(tab);
+                renderList(tab);
             }
 
             // ---- Event wiring ----
             document.getElementById("searchInput").addEventListener("input", function () {
+                resetVisible(currentTab);
                 renderList(currentTab);
             });
 
@@ -1412,8 +1976,48 @@
                     document.querySelectorAll(".cat-chip[data-cat]").forEach(function (x) {
                         x.classList.toggle("active", x === c);
                     });
+                    resetVisible("mods");
                     renderList("mods");
                 });
+            });
+
+            document.getElementById("btnMore").addEventListener("click", function () {
+                visibleCount[currentTab] += PAGE_SIZE;
+                renderList(currentTab);
+            });
+
+            // ---- FAQ accordion ----
+            document.querySelectorAll(".faq-question").forEach(function (btn) {
+                btn.addEventListener("click", function () {
+                    var item = btn.closest(".faq-item");
+                    var wasOpen = item.classList.contains("open");
+                    document.querySelectorAll(".faq-item.open").forEach(function (o) {
+                        o.classList.remove("open");
+                        var q = o.querySelector(".faq-question");
+                        if (q) q.setAttribute("aria-expanded", "false");
+                    });
+                    if (!wasOpen) {
+                        item.classList.add("open");
+                        btn.setAttribute("aria-expanded", "true");
+                    }
+                });
+            });
+
+            // ---- Nút cuộn lên đầu trang + thanh tiến trình ----
+            var scrollBtn = document.getElementById("scrollBtn");
+            var scrollProgress = document.getElementById("scrollProgress");
+
+            function onScroll() {
+                var st = window.pageYOffset || document.documentElement.scrollTop;
+                var max = (document.documentElement.scrollHeight || document.body.scrollHeight) - window.innerHeight;
+                if (scrollProgress) scrollProgress.style.width = (max > 0 ? (st / max) * 100 : 0) + "%";
+                if (scrollBtn) scrollBtn.classList.toggle("show", st > 200);
+            }
+            window.addEventListener("scroll", onScroll, { passive: true });
+            onScroll();
+
+            scrollBtn.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
             });
 
             // ---- Tự động đọc danh sách mod từ thư mục mod ----
@@ -1443,8 +2047,6 @@
                             dlurl: m.dlurl || ""
                         };
                     });
-                    modsFolderInfo.textContent = "Đang hiển thị " + mods.length + " mod từ thư mục mod.";
-                    modsFolderInfo.classList.remove("hidden");
                     renderAll();
                 };
                 el.onerror = function () {
@@ -1465,14 +2067,53 @@
                 nav.style.maxHeight = navOpen ? nav.scrollHeight + "px" : "0px";
             });
 
-            // Mobile nav: điều hướng tab khi bấm từ menu/bottom nav
-            document.querySelectorAll("[data-goto-tab]").forEach(function (a) {
-                a.addEventListener("click", function () {
-                    setActiveTab(a.getAttribute("data-goto-tab"));
-                    var nav = document.getElementById("navMobile");
-                    nav.style.maxHeight = "0px";
-                    navOpen = false;
-                });
+            // Điều hướng theo route: khi mở file (file://) dùng hash (#trangchu, #kho);
+            // khi host trên server dùng path thật (MODARCHIVE/trangchu, MODARCHIVE/kho).
+            var IS_FILE = window.location.protocol === "file:";
+
+            var ROUTE_BASE = (function () {
+                var p = window.location.pathname.replace(/\/index\.html$/, "").replace(/\/+$/, "");
+                return p;
+            })();
+
+            function pageUrl(seg) {
+                if (IS_FILE) return "index.html#" + seg;
+                return ROUTE_BASE + "/" + seg;
+            }
+
+            function navigate(path) {
+                if (IS_FILE) {
+                    var seg = path.split("#").pop() || "trangchu";
+                    if (location.hash !== "#" + seg) location.hash = seg;
+                } else if (window.location.pathname !== path) {
+                    history.pushState(null, "", path);
+                }
+                route();
+            }
+
+            // Gán href thật cho các link data-route
+            document.querySelectorAll("[data-route]").forEach(function (a) {
+                a.setAttribute("href", pageUrl(a.getAttribute("data-route")));
+            });
+
+            // Xử lý click cho mọi link route (nav, bottom nav, hero CTA, ...)
+            document.addEventListener("click", function (e) {
+                var a = e.target.closest("[data-route]");
+                if (!a) return;
+                e.preventDefault();
+                var seg = a.getAttribute("data-route");
+                var tab = a.getAttribute("data-goto-tab");
+                if (tab) setActiveTab(tab);
+                var isAbout = a.hasAttribute("data-goto-about");
+                navigate(pageUrl(seg));
+                if (isAbout) {
+                    setTimeout(function () {
+                        document.getElementById("about").scrollIntoView({ behavior: "smooth", block: "start" });
+                    }, 80);
+                }
+                var nav = document.getElementById("navMobile");
+                if (nav) nav.style.maxHeight = "0px";
+                navOpen = false;
             });
 
             // ---- Xác nhận tải xuống ----
@@ -1579,13 +2220,13 @@
 
             // Bottom nav active state
             var bottomNav = document.getElementById("bottomNav");
+            function setNavActive(which) {
+                if (!bottomNav) return;
+                bottomNav.querySelectorAll("a").forEach(function (a) {
+                    a.classList.toggle("active", a.getAttribute("data-nav") === which);
+                });
+            }
             if (bottomNav) {
-                var navAnchors = bottomNav.querySelectorAll("a");
-                function setNavActive(which) {
-                    navAnchors.forEach(function (a) {
-                        a.classList.toggle("active", a.getAttribute("data-nav") === which);
-                    });
-                }
                 setActiveTab = (function (orig) {
                     return function (tab) {
                         orig(tab);
@@ -1594,6 +2235,75 @@
                 })(setActiveTab);
                 setNavActive("mods");
             }
+
+            // ---- Routing theo path: /trangchu (trang chủ) / /kho (kho lưu trữ) ----
+            var homeEl = document.getElementById("home");
+            var aboutEl = document.getElementById("about");
+            var archiveEl = document.getElementById("archive");
+
+            function getRoute() {
+                if (IS_FILE) {
+                    var h = location.hash.replace("#", "");
+                    return h === "kho" ? "kho" : "trangchu";
+                }
+                var p = window.location.pathname.replace(/\/+$/, "");
+                var last = p.split("/").pop() || "";
+                return last === "kho" ? "kho" : "trangchu";
+            }
+
+            // Chuẩn hóa URL: vào web mặc định -> /trangchu (hoặc index.html#trangchu khi mở file)
+            function normalizePath() {
+                if (IS_FILE) {
+                    var h = location.hash.replace("#", "");
+                    if (h !== "trangchu" && h !== "kho") {
+                        location.hash = "trangchu";
+                    }
+                    return;
+                }
+                var p = window.location.pathname.replace(/\/+$/, "").replace(/\/index\.html$/, "");
+                var last = p.split("/").pop() || "";
+                if (last !== "trangchu" && last !== "kho") {
+                    history.replaceState(null, "", (p || "") + "/trangchu");
+                }
+            }
+
+            function route() {
+                var isKho = getRoute() === "kho";
+                homeEl.classList.toggle("hidden", isKho);
+                aboutEl.classList.toggle("hidden", isKho);
+                archiveEl.classList.toggle("hidden", !isKho);
+                if (bottomNav) setNavActive(isKho ? currentTab : "trangchu");
+                var nav = document.getElementById("navMobile");
+                if (nav) nav.style.maxHeight = "0px";
+                navOpen = false;
+                // Nhảy thẳng lên đầu trang, tránh bị CSS scroll-behavior:smooth làm chậm khi đổi route
+                var root = document.documentElement;
+                var prevBehavior = root.style.scrollBehavior;
+                root.style.scrollBehavior = "auto";
+                window.scrollTo(0, 0);
+                root.style.scrollBehavior = prevBehavior;
+            }
+            window.addEventListener("popstate", route);
+            window.addEventListener("hashchange", route);
+
+            // Hỗ trợ link cũ dạng index.html#kho / index.html#trangchu
+            var legacyHash = location.hash.replace("#", "");
+            if ((legacyHash === "kho" || legacyHash === "trangchu") && !IS_FILE) {
+                history.replaceState(null, "", pageUrl(legacyHash));
+            }
+            // Khôi phục route sau khi 404.html chuyển hướng về index.html (SPA fallback)
+            try {
+                var savedRoute = sessionStorage.getItem("modarchive.redirect");
+                if (savedRoute === "kho" || savedRoute === "trangchu") {
+                    sessionStorage.removeItem("modarchive.redirect");
+                    if (!IS_FILE && getRoute() !== savedRoute) {
+                        history.replaceState(null, "", pageUrl(savedRoute));
+                    }
+                }
+            } catch (e) {}
+
+            normalizePath();
+            route();
 
             renderAll();
         })();
